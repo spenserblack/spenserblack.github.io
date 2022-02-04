@@ -7,7 +7,7 @@ tags:
 ## Lazy Iterators / Generators
 
 To be honest, it's frustrating that more people aren't familiar with this
-concept. Many times I see an entirely new arrays/slices/lists/etc. defined just
+concept. Many times I see entirely new arrays/slices/lists/etc. defined just
 to contain calculated values that aren't reused. This takes up more memory than
 necessary. There's a better way!
 
@@ -107,6 +107,7 @@ for x in fizzbuzz(1, 15):
 Lazy iterators are also easy to do in Rust.
 
 ```rust
+// The range {start..end}, filter, and map are all lazy iterators
 let numbers_doubled: Vec<u8> = {1..=5}
     .filter(|n| n % 2 != 0)
     .map(|n| n * 2)
