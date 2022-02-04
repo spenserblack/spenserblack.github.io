@@ -1,6 +1,7 @@
 ---
 title: My Projects
 ---
+## Projects
 
 Here are some of my projects that you may find interesting.
 
