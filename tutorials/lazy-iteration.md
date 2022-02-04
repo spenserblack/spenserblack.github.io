@@ -1,7 +1,9 @@
 ---
 title: Lazy Iteration
 tags:
+  - javascript
   - python
+  - rust
 ---
 
 ## Lazy Iterators / Generators
