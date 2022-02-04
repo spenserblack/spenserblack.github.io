@@ -149,3 +149,51 @@ const odds = filter((n) => n % 2 !== 0, numbers);
 const oddsDoubled = map((n) => n * 2, odds);
 console.log(Array.from(oddsDoubled)); // [2, 6, 10]
 ```
+
+### Why?
+
+So why is lazy iteration useful? If you look back at the `fizzbuzz`
+Python example above, what if, instead of `yield`ing values, we
+`return`ed a list, like so?
+
+```python
+def fizzbuzz(start, stop):
+    fizzbuzzes = []
+    for n in range(start, stop + 1):
+        fizz = 'fizz' if n % 3 == 0 else ''
+        buzz = 'buzz' if n % 5 == 0 else ''
+        fizzbuzzes.append(f'{fizz}{buzz}' or n)
+    return fizzbuzzes
+```
+
+This may be fine for small ranges, but what if we wanted
+*a lot* of numbers. For example, `fizzbuzz(1, 1_000_000_000)`.
+Now we have to create a *massive* `list`, which may be so large
+that it **takes up too much memory and crashes**.
+
+### Downsides
+
+```python
+r = fizzbuzz(1, 15)
+
+for n in r:
+    # do nothing
+    pass
+
+for n in r:
+    print(n)
+```
+
+What do you think would be `print`ed if the above code was
+run? The answer: *nothing*. The generator `r` is consumed
+in the first loop, so there are no values yielded in the
+second loop. This is something to keep in mind when using
+generators. There are workarounds, of course, depending on
+what you need. Simply re-declaring the generator may be enough,
+or you could use one of the tools in [`itertools`][itertools].
+
+### Further Reading
+
+- [`itertools`][itertools]
+
+[itertools]: https://docs.python.org/3/library/itertools.html
