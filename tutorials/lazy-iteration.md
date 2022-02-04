@@ -153,8 +153,8 @@ console.log(Array.from(oddsDoubled)); // [2, 6, 10]
 ### Why?
 
 So why is lazy iteration useful? If you look back at the `fizzbuzz`
-Python example above, what if, instead of `yield`ing values, we
-`return`ed a list, like so?
+Python example above, what if, instead of yielding values, we
+returned a list, like so?
 
 ```python
 def fizzbuzz(start, stop):
@@ -170,6 +170,13 @@ This may be fine for small ranges, but what if we wanted
 *a lot* of numbers. For example, `fizzbuzz(1, 1_000_000_000)`.
 Now we have to create a *massive* `list`, which may be so large
 that it **takes up too much memory and crashes**.
+
+But a lazy iterator will generate the values *as needed* instead
+of all at once, saving memory (although the loop may take a long
+time to complete). This is why they are "lazy." They don't do
+anything until they *need* to. Because of this behavior, they
+can even be ***infinite**!* `itertools.count` is a great example
+of this.
 
 ### Downsides
 
