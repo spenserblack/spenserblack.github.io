@@ -10,3 +10,5 @@ Welcome! Here I'll document random projects, thoughts, or anything else.
 ### [Projects](./projects)
 
 ### [Tutorials](./tutorials)
+
+### [Reflections on (Computer) Languages](./languages)
