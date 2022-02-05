@@ -1,5 +1,6 @@
 ---
 title: 私のgithub.io
+lang: ja-JP
 ---
 
 ## 私のgithub.io
