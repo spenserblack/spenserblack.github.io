@@ -51,7 +51,8 @@ For keeping a clean history, `git add --patch` is the best command that nobody
 uses. What does it do? Normally, `git add [path]` stages *all* changes in
 files. `git add --patch` (`git add -p` for short) lets you review the changes
 in each file, and *pick which changes to add and which to ignore.* This is not
-only an incredibly useful way to avoid staging/committing unrelated changes.
+only an incredibly useful way to avoid staging/committing unrelated changes,
+but also a great way to learn how git works.
 Also, if you're not 100% sure what's staged before a commit, run `git status`
 or `git diff --staged` to double-check that everything looks good.
 
