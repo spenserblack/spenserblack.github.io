@@ -59,7 +59,19 @@ or `git diff --staged` to double-check that everything looks good.
 
 If you only use `git commit -m "Changes"`, then you've written commits with
 subject lines. But did you know that, like an email, a commit message can have
-both a subject and a body? The *correct* way to write a good commit message
+both a subject and a body? Commit messages can have multiple lines. The first
+line is the subject, the second line should be empty, and any line after that
+is the body. Here is an commit message with a subject and body.
+
+```
+Add a git tutorial
+
+Many useful git features are either ignored or misused. This tutorial
+instructs its readers on how to write a good commit message and use some
+git subcommands.
+```
+
+The *correct* way to write a good commit message
 would be to just execute `git commit` (no `-m`), and let git open a text editor.
 You may want to use `git config --global core.editor <editor command>` to use
 your favorite text editor for commits. So if that's the correct way, what's the
