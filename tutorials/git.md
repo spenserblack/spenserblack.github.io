@@ -58,7 +58,7 @@ or `git diff --staged` to double-check that everything looks good.
 #### Writing Good Commit Messages
 
 If you only use `git commit -m "Changes"`, then you've written commits with
-subject lines. But did you know that, like an email a commit message can have
+subject lines. But did you know that, like an email, a commit message can have
 both a subject and a body? The *correct* way to write a good commit message
 would be to just execute `git commit` (no `-m`), and let git open a text editor.
 You may want to use `git config --global core.editor <editor command>` to use
