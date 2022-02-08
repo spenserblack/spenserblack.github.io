@@ -109,6 +109,30 @@ allows you to check the diff with `git show <sha>`. Viewing the diff
 can make it very easy to see what change introduced the bug, which
 makes it much easier to identify what to do to fix the bug.
 
+### `git cherry-pick`
+
+This is a great tool to apply a single commit, ignoring other commits.
+For example, what if you had a branch that looks like this?
+
+```console
+$ git log --oneline branch-for-testing
+cccccccc Add pointless stuff
+bbbbbbbb Actually fix an important thing
+aaaaaaaa Do nothing important
+```
+
+You *could* `git merge branch-for-testing`, but you would get two
+useless commits that you probably don't want. Instead, you could
+use `git cherry-pick bbbbbbbb` to apply that single commit to
+your current branch.
+
+⚠️ If you cherrypick a commit, it will not be the exact same
+commit, but a *different commit with the same message and diff.*
+This is because the applied commit has a different parent than
+the commit specified with `git cherry-pick`. You probably do
+*not* want to cherrypick from a branch that you are planning
+to merge, because you can introduce duplicate commits this way.
+
 ### Miscellaneous Notes
 
 #### Commit Message Recovery
