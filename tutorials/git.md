@@ -108,3 +108,28 @@ Now, if you have a *clean* history, identifying the bad commit
 allows you to check the diff with `git show <sha>`. Viewing the diff
 can make it very easy to see what change introduced the bug, which
 makes it much easier to identify what to do to fix the bug.
+
+### Miscellaneous Notes
+
+#### Commit Message Recovery
+
+Once you get into more advanced Git usage, a commit can fail for
+a variety of reasons. For example, a failed attempt to sign a commit,
+or a failed commit hook.
+
+If you've put a lot of work into your commit message, you certainly
+don't want to lose the entire message the next time you attempt a
+commit! Thankfully, your commit message will continue to exist
+in `.git/COMMIT_EDITMSG` (`.git/modules/<module name>/COMMIT_EDITMSG`
+for submodules) *until you run `git commit` again.* So make sure
+that you try to recover your commit message *before* you attempt another
+commit.
+
+[This Stack Overflow answer](https://stackoverflow.com/a/57218983) has
+an awesome solution to recovering commit messages.
+You can create an alias called `recommit` which will automatically
+find the `COMMIT_EDITMSG` file and reuse it for the new commit.
+
+```bash
+git config --global alias.recommit '!git commit -eF $(git rev-parse --git-dir)/COMMIT_EDITMSG'
+```
