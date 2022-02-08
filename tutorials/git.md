@@ -85,10 +85,10 @@ than in the command line. 😆
 
 This is an awesome command that is sorely underused. It lets you *identify the
 commit that introduced a bug.* What it does is let you mark an earlier commit
-as "good" and a recent commit as "bad." It will then jump between the halfway
+as "good" and a recent commit as "bad." It will then jump to the halfway
 point of the "good" and "bad" commit, ask you if the currently checked-out
 commit is good or bad, then continue the previous step until a single commit
-is identified as the bad commit.
+is identified as the first bad commit.
 
 Here is an example of using `git bisect`.
 
