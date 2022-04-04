@@ -4,7 +4,8 @@ TypeScript's type system might seem simple at first, but it is capable of a
 surprising amount of complexity. Supposedly, it is even
 [Turing complete](https://github.com/microsoft/TypeScript/issues/14833)!
 
-This tutorial contains a few interesting things you can do with the type system.
+This tutorial contains a few interesting examples to help you learn what
+you can do with the type system.
 
 ### Boolean Logic
 
@@ -60,4 +61,31 @@ type ItWorks = IfElse<True, 'it works!', "it doesn't work...">;
 
 // The detected type should be "ok!"
 type SomethingMoreComplex = IfElse<Or<True, False>, IfElse<Not<And<True, Not<True>>>, 'ok!', undefined>, null>;
+```
+
+### Linked List
+
+Here's something fun: finding the last element of a linked list as a type.
+
+#### Setup
+
+```typescript
+interface LinkedList {
+    value: any;
+    next: LinkedList | null;
+}
+```
+
+#### Getting The Last Value
+
+```typescript
+type LastValue<L extends LinkedList> = L['next'] extends null ? L['value'] : LastValue<NonNullable<L['next']>>;
+```
+
+Let's try it out!
+
+```typescript
+type LastValue1 = LastValue<{ value: 1, next: null }>;
+type LastValue2 = LastValue<{ value: 1, next: { value: 2, next: null } }>;
+type LastValue3 = LastValue<{ value: 1, next: { value: 2, next: { value: 3, next: null } } }>;
 ```
