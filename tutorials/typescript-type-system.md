@@ -108,7 +108,7 @@ which would have been much more cumbersome. We put the first value at the end, a
 values recursively. If, for some reason, our array `T` cannot be represented as `[First, ...Remainder]`,
 then we just return the unreversed array. Finally, if `0` is not a key of the array `T`, we assume `T`
 to be an empty array and return it. Note that at runtime this is not always true: here is a simple
-example where `0` would not be a key in an array a length >= `1`.
+example where `0` would not be a key in an array with length >= `1`.
 
 ```javascript
 const arr = [1, 2, 3];
