@@ -89,3 +89,42 @@ type LastValue1 = LastValue<{ value: 1, next: null }>;
 type LastValue2 = LastValue<{ value: 1, next: { value: 2, next: null } }>;
 type LastValue3 = LastValue<{ value: 1, next: { value: 2, next: { value: 3, next: null } } }>;
 ```
+
+### Array Manipulation
+
+#### Reversing An Array Type
+
+In this example, we will create a type that represents a reversed array.
+```typescript
+type Reverse<T extends Array<unknown>> = 0 extends keyof T ?  (T extends [infer First, ...infer Remainder] ? [...Reverse<Remainder>, First] : T) : []
+```
+
+This is basically saying that, if `0` is in the array, then we know the array's length is >= `1`.
+We use `[infer First, ...infer Remainder]` to "split" the array `T`. Here we're checking that `T`
+can be represented by an array with 1 value, and then 0 or more remaining values. The `infer` allows
+us to create new type variables *inside* the type definition. Otherwise, we might have needed a type
+signature like `Reverse<T extends Array<unknown>, First extends unknown, Remainder extends Array<unknown>>`,
+which would have been much more cumbersome. We put the first value at the end, and reverse the rest of the
+values recursively. If, for some reason, our array `T` cannot be represented as `[First, ...Remainder]`,
+then we just return the unreversed array. Finally, if `0` is not a key of the array `T`, we assume `T`
+to be an empty array and return it. Note that at runtime this is not always true: here is a simple
+example where `0` would not be a key in an array a length >= `1`.
+
+```javascript
+const arr = [1, 2, 3];
+delete arr[0];
+console.log(arr); // [empty, 2, 3]
+console.log(0 in arr); // false
+console.log(1 in arr); // true
+```
+
+Anyway, let's see our `Reverse` type in action!
+
+```typescript
+type Test = Reverse<['one', 2, { value: 3 }]>;
+```
+
+The type of `Test` should be `[{ value: 3 }, 2, "one"]`.
+
+Note that `Reverse` will only work with arrays known at compile-time. If the
+array mutates at runtime, then the type of `Reverse` would "return" `unknown[]`.
