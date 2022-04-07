@@ -1,8 +1,8 @@
 ## TypeScript's Type System
 
 TypeScript's type system might seem simple at first, but it is capable of a
-surprising amount of complexity. Supposedly, it is even
-[Turing complete](https://github.com/microsoft/TypeScript/issues/14833)!
+surprising amount of complexity. [Games have been written in the type sytem][TypeGame].
+Supposedly, it is even [Turing complete](https://github.com/microsoft/TypeScript/issues/14833)!
 
 This tutorial contains a few interesting examples to help you learn what
 you can do with the type system.
@@ -128,3 +128,5 @@ The type of `Test` should be `[{ value: 3 }, 2, "one"]`.
 
 Note that `Reverse` will only work with arrays known at compile-time. If the
 array mutates at runtime, then the type of `Reverse` would "return" `unknown[]`.
+
+[TypeGame]: https://github.com/fc01/TypeGame
