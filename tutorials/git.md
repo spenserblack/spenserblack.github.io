@@ -56,6 +56,14 @@ but also a great way to learn how git works.
 Also, if you're not 100% sure what's staged before a commit, run `git status`
 or `git diff --staged` to double-check that everything looks good.
 
+Sadly, `git add --patch` only works on files that have already been staged,
+not new files. But there's an interesting command, `git add -N <path>`, which
+does *not* stage any changes from that new file, but marks the file with an
+intent to add. This means you're telling Git "I *want* to add this," and it
+will be included with `git add --patch`.
+
+_**NOTE** `git add --intent-to-add` is the long form of `git add -N`._
+
 #### Writing Good Commit Messages
 
 If you only use `git commit -m "Changes"`, then you've written commits with
