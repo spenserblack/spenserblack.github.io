@@ -5,7 +5,7 @@ tags:
 ---
 ## Git
 
-The stuff you should know (but they probably didn't teach you).
+The stuff that should have been taught first (but probably wasn't).
 
 ### Refresher
 
