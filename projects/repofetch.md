@@ -20,7 +20,7 @@ overwhelming. I let this project sit for a while, just occasionally merging depe
 requests. And then, after seeing some interest from the community, I decided to continue working on
 it.
 
-Supporting other other APIs was still a hurdle. Yet supporting multiple repository hosts in a single
+Yet supporting multiple repository hosts in a single
 project, which could potentially have vastly different APIs, still felt overwhelming. And that's
 when I got the idea that, instead of having one massive project to support everything, I could
 rewrite Repofetch to be plugin-based. There would be some official plugins, of course, but also it
