@@ -1,0 +1,24 @@
+{
+    "name": "Jekyll",
+    "image": "mcr.microsoft.com/devcontainers/jekyll:0-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+
+    "forwardPorts": [
+        // Jekyll server
+        4000,
+        // Live reload server
+        35729
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "EditorConfig.EditorConfig"
+            ]
+        }
+    },
+    "postCreateCommand": "sh .devcontainer/post-create.sh"
+}
