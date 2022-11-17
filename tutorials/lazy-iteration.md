@@ -8,8 +8,7 @@ tags:
 
 ## Lazy Iterators / Generators
 
-To be honest, it's frustrating that more people aren't familiar with this
-concept. Many times I see entirely new arrays/slices/lists/etc. defined just
+Many times I see entirely new arrays/slices/lists/etc. defined just
 to contain calculated values that aren't reused. This takes up more memory than
 necessary. There's a better way!
 
