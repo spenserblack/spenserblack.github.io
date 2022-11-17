@@ -167,7 +167,8 @@ def fizzbuzz(start, stop):
 ```
 
 This may be fine for small ranges, but what if we wanted
-*a lot* of numbers. For example, `fizzbuzz(1, 1_000_000_000)`.
+*a lot* of numbers (or even *infinite* numbers)?
+For example, `fizzbuzz(1, 1_000_000_000)`.
 Now we have to create a *massive* `list`, which may be so large
 that it **takes up too much memory and crashes**.
 
