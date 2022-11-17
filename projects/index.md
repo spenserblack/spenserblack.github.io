@@ -11,3 +11,4 @@ Here are some of my projects that you may find interesting.
 - [Fun Japanese Terms](fun-jp-terms)
 - [Imretro](./imretro)
 - [configfiles](./configfiles)
+- [repofetch](./repofetch)
