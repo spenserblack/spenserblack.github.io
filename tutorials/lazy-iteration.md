@@ -37,7 +37,7 @@ for (let i = 0; i <= numbers.length; i++) {
 ```
 
 ```javascript
-// The other obvious way.
+// Another easy way.
 const oddsDoubled = [];
 numbers.forEach((n) => {
   if (n % 2 !== 0) {
@@ -45,6 +45,7 @@ numbers.forEach((n) => {
   }
 });
 ```
+And, of course, you could use `reduce`.
 
 But, the more complex your filtering, mapping or whatever other calculation you
 make gets, the bigger the loop gets, and this can make it hard to read.
