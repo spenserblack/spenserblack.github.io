@@ -42,15 +42,21 @@ work for the users, as some Node versions seemed like they would require the use
 too much from the user. The other two candidates were Python and Ruby. What put Ruby ahead was the
 behavior of its `require`. With Python there was a danger of circular imports. A plugin might try
 to import a utility from Repofetch, while Repofetch is attempting to import the plugin. But Ruby's
-`require` is almost more like C's `#include`: if something is required by an outer module, it's
-already available in the inner module. So `repofetch/github` wouldn't need to require `repofetch`,
-because the executable would first require `repofetch` and then require any plugins, making the
-contents of `repofetch` available to those plugins! Also, this was an excuse to start using Ruby
-😆
+`require` is different: it attempts to load the module, and only loads it once. This makes circular
+dependencies a *bit* safer: a plugin can require the main `'repofetch'` module (useful for writing
+tests), and repofetch is still able to `require` the plugin during its dynamic `require`.
 
 At the time of writing this, the plugin-based version is nearly ready for an initial release, but
 it is still a work in progress, and the Ruby version can be viewed on the `ruby` branch. However,
 I'm very excited about how it is turning out!
 
+## Update (2022/12/12)
+
+An initial version of this rewrite is now published at [rubygems.org][gem]. I'm still figuring
+out some things, so there may be some breaking changes for plugin authors. For example, I'm
+still deciding the best way to define a primary color for a plugin's stats, and which methods
+should be required vs. options.
+
+[gem]: https://rubygems.org/gems/repofetch
 [onefetch]: https://github.com/o2sh/onefetch
 [repofetch]: https://github.com/spenserblack/repofetch
