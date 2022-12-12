@@ -52,11 +52,16 @@ I'm very excited about how it is turning out!
 
 ## Update (2022/12/12)
 
-An initial version of this rewrite is now published at [rubygems.org][gem]. I'm still figuring
-out some things, so there may be some breaking changes for plugin authors. For example, I'm
-still deciding the best way to define a primary color for a plugin's stats, and which methods
-should be required vs. options.
+An initial version of this rewrite is now published at [rubygems.org][gem]. It makes it fairly easy
+to write a "stat fetcher" that looks like the output of [`neofetch`][neofetch], by handling the
+spacing of ASCII and coloring. All the plugin author needs to define, besides some functions to
+detect if the plugin should be used, is the ASCII art and a list of stats to display.
+
+I'm still figuring out some things, so there may be some breaking changes for plugin authors. For
+example, I'm still deciding the best way to define a primary color for a plugin's stats, and which
+methods should be required vs. options.
 
 [gem]: https://rubygems.org/gems/repofetch
+[neofetch]: https://github.com/dylanaraps/neofetch
 [onefetch]: https://github.com/o2sh/onefetch
 [repofetch]: https://github.com/spenserblack/repofetch
