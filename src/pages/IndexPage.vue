@@ -1,5 +1,5 @@
 <script setup>
-import MD from './IndexPage.md';
+import MD from 'assets/IndexPage.md';
 </script>
 
 <template>
