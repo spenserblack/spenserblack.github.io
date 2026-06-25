@@ -7,23 +7,33 @@ const sourceCode = `${github}/spenserblack.github.io`;
 
 <footer>
 	<h2>Links</h2>
-	<ul>
+	<ul class="horizontal">
 		<li>
 			<strong>Socials</strong>
-			<ul>
+			<ul class="vertical">
 				<li><ExternalLink link={codeberg}>Codeberg</ExternalLink></li>
 				<li><ExternalLink link={github}>GitHub</ExternalLink></li>
 			</ul>
 		</li>
-		<li><ExternalLink link={sourceCode}>Source</ExternalLink></li>
+		<li>
+			<strong>Other</strong>
+			<ul class="vertical">
+				<li><ExternalLink link={sourceCode}>Source</ExternalLink></li>
+			</ul>
+		</li>
 	</ul>
 </footer>
 
 <style>
 	ul {
 		display: flex;
-		flex-direction: column;
 		justify-content: space-around;
+	}
+	ul.horizontal {
+		flex-direction: row;
+	}
+	ul.vertical {
+		flex-direction: column;
 	}
 	li {
 		display: inline-block;
