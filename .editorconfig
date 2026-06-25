@@ -1,0 +1,47 @@
+root = true
+
+[*]
+end_of_line = LF
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Astro
+[*.astro]
+indent_style = tab
+indent_size = 2
+
+# CSS
+[*.css]
+indent_style = space
+indent_size = 2
+
+# HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+# JavaScript
+[*.{js,cjs,mjs,jsx}]
+indent_style = space
+indent_size = 2
+
+# JSON (and with comments)
+[*.{json,jsonc}]
+indent_style = space
+indent_size = 2
+
+# Shell
+[*.{sh,bash}]
+indent_style = tab
+indent_size = 2
+
+# TypeScript
+[*.{ts,tsx}]
+indent_style = space
+indent_size = 2
+
+# YAML
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
