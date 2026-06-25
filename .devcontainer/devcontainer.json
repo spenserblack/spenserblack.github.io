@@ -4,9 +4,19 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "astro-build.astro-vscode",
         "EditorConfig.EditorConfig"
       ]
     }
   },
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Site",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": ".devcontainer/postCreate.sh",
+  "postAttachCommand": ".devcontainer/postAttach.sh",
   "remoteUser": "node"
 }
