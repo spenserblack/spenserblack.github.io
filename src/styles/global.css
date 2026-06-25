@@ -1,0 +1,53 @@
+:root {
+  --dark-main-bg: #333;
+  --dark-main-fg: #EEE;
+  --dark-link: #FC4;
+  --dark-link-visited: #FA4;
+  --dark-link-hover: #FD5;
+
+  --light-main-bg: #EEE;
+  --light-main-fg: #333;
+  --light-link: #E64;
+  --light-link-visited: #E84;
+  --light-link-hover: #D60;
+
+  --main-bg: var(--dark-main-bg);
+  --main-fg: var(--dark-main-fg);
+  --link: var(--dark-link);
+  --link-visited: var(--dark-link-visited);
+  --link-hover: var(--dark-link-visited);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: var(--main-fg);
+  background-color: var(--main-bg);
+}
+
+/** NOTE
+  * Some people disable all types of fingerprinting in their browser, which disables dark/light
+  * mode detection. I'm just assuming those people prefer dark mode, and making that the default
+  * when it's unknown.
+  */
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-bg: var(--light-main-bg);
+   --main-fg: var(--light-main-fg);
+   --link: var(--light-link);
+   --link-visited: var(--light-link-visited);
+   --link-hover: var(--light-link-hover);
+  }
+}
+
+* {
+  transition: color 0.25s ease-out;
+}
+
+a {
+  color: var(--link);
+}
+a:visited {
+  color: var(--link-visited);
+}
+a:hover {
+  color: var(--link-hover);
+}

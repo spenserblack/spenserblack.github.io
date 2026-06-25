@@ -1,0 +1,33 @@
+---
+import ExternalLink from "./ExternalLink.astro";
+const codeberg = "https://codeberg.org/spenserblack";
+const github = "https://github.com/spenserblack";
+const sourceCode = `${github}/spenserblack.github.io`;
+---
+
+<footer>
+	<h2>Links</h2>
+	<ul>
+		<li>
+			<strong>Socials</strong>
+			<ul>
+				<li><ExternalLink link={codeberg}>Codeberg</ExternalLink></li>
+				<li><ExternalLink link={github}>GitHub</ExternalLink></li>
+			</ul>
+		</li>
+		<li><ExternalLink link={sourceCode}>Source</ExternalLink></li>
+	</ul>
+</footer>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	li {
+		display: inline-block;
+		flex-direction: column;
+		margin: 0 0.5rem;
+	}
+</style>
