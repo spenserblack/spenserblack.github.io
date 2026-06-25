@@ -1,18 +1,25 @@
 :root {
   --dark-main-bg: #333;
   --dark-main-fg: #EEE;
+  --dark-primary: #FA4;
   --dark-link: #FC4;
   --dark-link-visited: #FA4;
   --dark-link-hover: #FD5;
+  --dark-contrast: #222;
 
   --light-main-bg: #EEE;
   --light-main-fg: #333;
+  --light-primary: #E84;
   --light-link: #E64;
   --light-link-visited: #E84;
   --light-link-hover: #D60;
+  --light-contrast: #FFF;
 
   --main-bg: var(--dark-main-bg);
   --main-fg: var(--dark-main-fg);
+  --primary: var(--dark-primary);
+  /* NOTE Used for contrasting with emphasized backgrounds */
+  --contrast: var(--dark-contrast);
   --link: var(--dark-link);
   --link-visited: var(--dark-link-visited);
   --link-hover: var(--dark-link-visited);
@@ -32,10 +39,32 @@
   :root {
     --main-bg: var(--light-main-bg);
    --main-fg: var(--light-main-fg);
+   --primary: var(--light-primary);
+   --contrast: var(--light-contrast);
    --link: var(--light-link);
    --link-visited: var(--light-link-visited);
    --link-hover: var(--light-link-hover);
   }
+}
+
+:root[data-theme="light"] {
+    --main-bg: var(--light-main-bg);
+   --main-fg: var(--light-main-fg);
+   --primary: var(--light-primary);
+   --contrast: var(--light-contrast);
+   --link: var(--light-link);
+   --link-visited: var(--light-link-visited);
+   --link-hover: var(--light-link-hover);
+}
+
+:root[data-theme="dark"] {
+  --main-bg: var(--dark-main-bg);
+  --main-fg: var(--dark-main-fg);
+  --primary: var(--dark-primary);
+  --contrast: var(--dark-contrast);
+  --link: var(--dark-link);
+  --link-visited: var(--dark-link-visited);
+  --link-hover: var(--dark-link-visited);
 }
 
 body {
@@ -59,4 +88,20 @@ a:visited {
 }
 a:hover {
   color: var(--link-hover);
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button.primary {
+  background-color: var(--primary);
+  color: var(--contrast);
+}
+
+.hide {
+  display: none;
 }
