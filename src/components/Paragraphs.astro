@@ -1,0 +1,10 @@
+---
+type Props = {
+	paragraphs: string[],
+};
+
+const { paragraphs } = Astro.props;
+---
+{
+	paragraphs.map((p) => <p>{p}</p>)
+}

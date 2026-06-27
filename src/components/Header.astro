@@ -1,8 +1,14 @@
 ---
+const pages: [description: string, link: string][] = [
+	["Homepage", "/"],
+	["Projects", "/projects/"],
+];
 ---
 <header>
 	<nav>
-		<a href="/">Homepage</a>
+		{
+			pages.map(([description, link]) => <a class="button primary" href={link}>{description}</a>)
+		}
 	</nav>
 	<div class="controls">
 		<div id="theme-dropdown" class="dropdown">
@@ -40,5 +46,9 @@
 	.dropdown ul li * {
 		color: var(--main-fg);
 		background-color: var(--contrast);
+	}
+
+	nav a {
+		margin: 0 0.5rem;
 	}
 </style>

@@ -90,14 +90,17 @@ a:hover {
   color: var(--link-hover);
 }
 
-button {
+button,
+.button {
   padding: 0.25rem 0.5rem;
   background-color: none;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  text-decoration: none;
 }
-button.primary {
+button.primary,
+.button.primary {
   background-color: var(--primary);
   color: var(--contrast);
 }
