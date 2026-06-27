@@ -1,0 +1,14 @@
+---
+type Relation = "owner" | "maintainer";
+const relationTitle: Record<Relation, string> = {
+	owner: "I am an administrator of this project",
+	maintainer: "I am a collaborator that helps maintain this project",
+};
+
+type Props = {
+	relation: Relation;
+};
+
+const { relation } = Astro.props;
+---
+<p><em class="badge" title={relationTitle[relation]}>{relation}</em></p>

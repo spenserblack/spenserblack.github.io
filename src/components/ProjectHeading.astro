@@ -1,0 +1,8 @@
+---
+type Props = {
+	link: string;
+};
+
+const { link } = Astro.props;
+---
+<h2><a href={link}><slot /></a></h2>

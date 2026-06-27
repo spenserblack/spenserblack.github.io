@@ -1,52 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Paragraphs from "../components/Paragraphs.astro";
+import ExternalLink from "../components/ExternalLink.astro";
+import ProjectHeading from "../components/ProjectHeading.astro";
+import ProjectRelation from "../components/ProjectRelation.astro";
 const title = "Projects";
-
-type Relation = "owner" | "maintainer";
-const relationTitle: Record<Relation, string> = {
-	owner: "I am an administrator of this project",
-	maintainer: "I am a collaborator that helps maintain this project",
-};
-type Project = {
-	relation: Relation;
-	link: string;
-	description: string[];
-};
-const projects: Record<string, Project> = {
-	gengo: {
-		relation: "owner",
-		link: "https://github.com/spenserblack/gengo",
-		description: [
-			"A multi-purpose tool to help identify the code languages within a project.",
-			"Works on both work trees and bare repositories."
-		],
-	},
-	onefetch: {
-		relation: "maintainer",
-		link: "https://github.com/o2sh/onefetch",
-		description: [
-			"A CLI tool that analyzes your repository and prints an ASCII logo for its primary language and various repository statistics.",
-		],
-	},
-	steamdown: {
-		relation: "owner",
-		link: "https://github.com/spenserblack/steamdown",
-		description: [
-			"A parser and renderer for a markdown-like syntax. Content can be rendered as Steam's formatting language, or as HTML for a preview.",
-		],
-	},
-};
 ---
 <BaseLayout title={title}>
 	<p>
 		Here are some of the open-source projects that I work on.
 	</p>
-	{
-		Object.entries(projects).map(([project, { relation, link, description }]) => (
-			<h2><a href={link}>{project}</a></h2>
-			<p><em class="badge" title={relationTitle[relation]}>{relation}</em></p>
-			<Paragraphs paragraphs={description} />
-		))
-	}
+	<ProjectHeading link="https://github.com/spenserblack/fancy-tree">fancy-tree</ProjectHeading>
+	<ProjectRelation relation="owner" />
+	<p>
+		An alternative to <ExternalLink link="https://en.wikipedia.org/wiki/Tree_(command)"><code>tree</code></ExternalLink> with
+		support for Git status and code language detection.
+		It uses <ExternalLink link="https://www.lua.org/">Lua</ExternalLink> configuration files to
+		support fine-grained customization.
+	</p>
+
+	<ProjectHeading link="https://github.com/spenserblack/gengo">gengo</ProjectHeading>
+	<ProjectRelation relation="owner" />
+	<p>
+		A multi-purpose tool to help identify the code languages within a project. Works on both work trees and bare git repositories.
+	</p>
+
+	<ProjectHeading link="https://github.com/o2sh/onefetch">Onefetch</ProjectHeading>
+	<ProjectRelation relation="maintainer" />
+	<p>
+		A CLI tool that analyzes your repository and prints an ASCII logo for its primary language and
+		various repository statistics.
+		Think like <ExternalLink link="https://github.com/dylanaraps/neofetch"><code>neofetch</code></ExternalLink>,
+		but for a Git repository.
+	</p>
+
+	<ProjectHeading link="https://github.com/spenserblack/steamdown">Steamdown</ProjectHeading>
+	<ProjectRelation relation="owner" />
+	<p>
+		A parser and renderer for a markdown-like syntax. Content can be rendered
+		as <ExternalLink link="https://steamcommunity.com/comment/Recommendation/formattinghelp">Steam's formatting language</ExternalLink>,
+		or as HTML for a preview.
+	</p>
 </BaseLayout>
