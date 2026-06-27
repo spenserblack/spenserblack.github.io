@@ -2,6 +2,20 @@ const dropdown = document.getElementById("theme-dropdown") as HTMLDivElement;
 const button = document.getElementById("theme-dropdown-button") as HTMLButtonElement;
 const content = document.getElementById("theme-dropdown-content") as HTMLDivElement;
 
+const themeKey = "spenserblack.github.io theme";
+const setTheme = (theme: string) => {
+  document.documentElement.dataset.theme = theme;
+};
+const saveTheme = (theme: string) => {
+  localStorage.setItem(themeKey, theme);
+};
+const loadTheme = (): string | null => localStorage.getItem(themeKey);
+
+// NOTE Set theme for initial load.
+const savedTheme = loadTheme();
+if (savedTheme !== null) {
+  setTheme(savedTheme);
+}
 
 const buttonVariants: [string, HTMLButtonElement][] =  ["system", "dark", "light"]
   .map((variant) => [variant, document.getElementById(`theme-${variant}`) as HTMLButtonElement]);
@@ -36,7 +50,8 @@ button.addEventListener("blur", (e) => {
 buttonVariants
 .forEach(([variant, button]) => {
   button.addEventListener("mousedown", () => {
-    document.documentElement.dataset.theme = variant;
+    setTheme(variant);
+    saveTheme(variant);
     hide();
   });
 });
