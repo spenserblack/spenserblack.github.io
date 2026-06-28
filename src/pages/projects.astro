@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExternalLink from "../components/ExternalLink.astro";
 import ProjectHeading from "../components/ProjectHeading.astro";
-import ProjectRelation from "../components/ProjectRelation.astro";
+import ProjectStats from "../components/ProjectStats.astro";
 const title = "Projects";
 ---
 <BaseLayout title={title}>
@@ -10,7 +10,7 @@ const title = "Projects";
 		Here are some of the open-source projects that I work on.
 	</p>
 	<ProjectHeading link="https://github.com/spenserblack/fancy-tree">fancy-tree</ProjectHeading>
-	<ProjectRelation relation="owner" />
+	<ProjectStats relation="owner" />
 	<p>
 		An alternative to <ExternalLink link="https://en.wikipedia.org/wiki/Tree_(command)"><code>tree</code></ExternalLink> with
 		support for Git status and code language detection.
@@ -19,13 +19,13 @@ const title = "Projects";
 	</p>
 
 	<ProjectHeading link="https://github.com/spenserblack/gengo">gengo</ProjectHeading>
-	<ProjectRelation relation="owner" />
+	<ProjectStats relation="owner" />
 	<p>
 		A multi-purpose tool to help identify the code languages within a project. Works on both work trees and bare git repositories.
 	</p>
 
 	<ProjectHeading link="https://github.com/o2sh/onefetch">Onefetch</ProjectHeading>
-	<ProjectRelation relation="maintainer" />
+	<ProjectStats relation="maintainer" />
 	<p>
 		A CLI tool that analyzes your repository and prints an ASCII logo for its primary language and
 		various repository statistics.
@@ -34,7 +34,7 @@ const title = "Projects";
 	</p>
 
 	<ProjectHeading link="https://github.com/spenserblack/steamdown">Steamdown</ProjectHeading>
-	<ProjectRelation relation="owner" />
+	<ProjectStats relation="owner" />
 	<p>
 		A parser and renderer for a markdown-like syntax. Content can be rendered
 		as <ExternalLink link="https://steamcommunity.com/comment/Recommendation/formattinghelp">Steam's formatting language</ExternalLink>,

@@ -11,4 +11,7 @@ type Props = {
 
 const { relation } = Astro.props;
 ---
-<p><em class="badge" title={relationTitle[relation]}>{relation}</em></p>
+<dl>
+	<dt>Relation</dt>
+	<dd title={relationTitle[relation]}>{relation}</dd>
+</dl>
