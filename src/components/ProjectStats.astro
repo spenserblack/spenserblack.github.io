@@ -6,12 +6,38 @@ const relationTitle: Record<Relation, string> = {
 };
 
 type Props = {
+	language: string;
 	relation: Relation;
 };
 
-const { relation } = Astro.props;
+const { language, relation } = Astro.props;
 ---
 <dl>
 	<dt>Relation</dt>
-	<dd title={relationTitle[relation]}>{relation}</dd>
+	<dd class="relation" title={relationTitle[relation]}>{relation}</dd>
+	<dt>Language</dt>
+	<dd>{language}</dd>
 </dl>
+
+<style>
+	dl {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.5rem;
+	}
+	dt {
+		font-weight: bold;
+		grid-row: 1;
+	}
+	dd {
+		grid-row: 2;
+	}
+	dt, dd {
+		margin: 0;
+		text-align: center;
+	}
+	.relation {
+		text-decoration: underline;
+		cursor: help;
+	}
+</style>
