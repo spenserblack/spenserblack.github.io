@@ -4,8 +4,8 @@ import ExternalLink from "../components/ExternalLink.astro";
 import LinkList from "../components/LinkList.astro";
 const title = "Homepage";
 
-const mapToExternalLinks = (items: Record<string, string>) => Object.entries(items)
-	.map(([name, link]) => ({ name, link, external: true }));
+const mapToExternalLinks = (items: Record<string, string>) =>
+	Object.entries(items).map(([name, link]) => ({ name, link, external: true }));
 
 const languages = mapToExternalLinks({
 	Go: "https://go.dev/",
@@ -22,7 +22,8 @@ const books = mapToExternalLinks({
 const animeAndManga = mapToExternalLinks({
 	Baki: "https://youtu.be/vazrSoijLmA",
 	Drifters: "https://en.wikipedia.org/wiki/Drifters_(manga)",
-	"Getter Robo Armageddon": "https://en.wikipedia.org/wiki/Getter_Robo_Armageddon",
+	"Getter Robo Armageddon":
+		"https://en.wikipedia.org/wiki/Getter_Robo_Armageddon",
 });
 const games = mapToExternalLinks({
 	"Resident Evil": "https://en.wikipedia.org/wiki/Resident_Evil",
@@ -33,19 +34,28 @@ const games = mapToExternalLinks({
 
 <BaseLayout title={title}>
 	<h2>Introduction</h2>
-	<p>👋 This is my personal site. I'm a developer, both for work and as a hobby, and I enjoy using the following languages:</p>
+	<p>
+		👋 This is my personal site. I'm a developer, both for work and as a hobby,
+		and I enjoy using the following languages:
+	</p>
 	<LinkList items={languages} />
 	<p>
-		As you can probably tell from this site's styling, I am not much of
-		a <ExternalLink link="https://en.wikipedia.org/wiki/Front_end_and_back_end">front-end</ExternalLink> developer,
-		and tend to keep my websites simple. When I <em>do</em> write frontend stuff, I typically use
-		either <ExternalLink link="https://svelte.dev/">Svelte</ExternalLink> or <ExternalLink link="https://vuejs.org/">Vue</ExternalLink>.
-		This site has been written with <strong><ExternalLink link="https://astro.build/">Astro</ExternalLink></strong>, both as a means
-		of teaching myself Astro and also because it seemed like a good tool to build this site.
+		As you can probably tell from this site's styling, I am not much of a <ExternalLink
+			link="https://en.wikipedia.org/wiki/Front_end_and_back_end"
+			>front-end</ExternalLink
+		> developer, and tend to keep my websites simple. When I <em>do</em> write frontend
+		stuff, I typically use either <ExternalLink link="https://svelte.dev/"
+			>Svelte</ExternalLink
+		> or <ExternalLink link="https://vuejs.org/">Vue</ExternalLink>. This site
+		has been written with <strong
+			><ExternalLink link="https://astro.build/">Astro</ExternalLink></strong
+		>, both as a means of teaching myself Astro and also because it seemed like
+		a good tool to build this site.
 	</p>
 
 	<p>
-		Besides coding stuff, I like reading, video games, movies, anime and manga, and sometimes working out. I especially like:
+		Besides coding stuff, I like reading, video games, movies, anime and manga,
+		and sometimes working out. I especially like:
 	</p>
 	<ul>
 		<li>

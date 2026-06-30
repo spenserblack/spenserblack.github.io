@@ -4,15 +4,26 @@ const pages: [description: string, link: string][] = [
 	["Projects", "/projects/"],
 ];
 ---
+
 <header>
 	<nav>
 		{
-			pages.map(([description, link]) => <a class="button primary" href={link}>{description}</a>)
+			pages.map(([description, link]) => (
+				<a class="button primary" href={link}>
+					{description}
+				</a>
+			))
 		}
 	</nav>
 	<div class="controls">
 		<div id="theme-dropdown" class="dropdown">
-			<button type="button" id="theme-dropdown-button" class="primary theme" aria-expanded="false" aria-controls="theme-dropdown">
+			<button
+				type="button"
+				id="theme-dropdown-button"
+				class="primary theme"
+				aria-expanded="false"
+				aria-controls="theme-dropdown"
+			>
 				Theme
 			</button>
 			<ul id="theme-dropdown-content" class="dropdown-content hide">

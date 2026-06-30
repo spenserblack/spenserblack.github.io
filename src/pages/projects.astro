@@ -5,47 +5,61 @@ import ProjectHeading from "../components/ProjectHeading.astro";
 import ProjectStats from "../components/ProjectStats.astro";
 const title = "Projects";
 ---
+
 <BaseLayout title={title}>
-	<p>
-		Here are some of the open-source projects that I work on.
-	</p>
-	<ProjectHeading link="https://github.com/spenserblack/fancy-tree">fancy-tree</ProjectHeading>
+	<p>Here are some of the open-source projects that I work on.</p>
+	<ProjectHeading link="https://github.com/spenserblack/fancy-tree"
+		>fancy-tree</ProjectHeading
+	>
 	<ProjectStats language="Rust" relation="owner" />
 	<p>
-		An alternative to <ExternalLink link="https://en.wikipedia.org/wiki/Tree_(command)"><code>tree</code></ExternalLink> with
-		support for Git status and code language detection.
-		It uses <ExternalLink link="https://www.lua.org/">Lua</ExternalLink> configuration files to
-		support fine-grained customization.
+		An alternative to <ExternalLink
+			link="https://en.wikipedia.org/wiki/Tree_(command)"
+			><code>tree</code></ExternalLink
+		> with support for Git status and code language detection. It uses <ExternalLink
+			link="https://www.lua.org/">Lua</ExternalLink
+		> configuration files to support fine-grained customization.
 	</p>
 
-	<ProjectHeading link="https://github.com/spenserblack/from-ascii">from-ascii</ProjectHeading>
+	<ProjectHeading link="https://github.com/spenserblack/from-ascii"
+		>from-ascii</ProjectHeading
+	>
 	<ProjectStats language="Go" relation="owner" />
 	<p>
-		A tool to convert ASCII art into an actual image, treating each character like a pixel. Pixel
-		opacity is determined the ASCII character used, and ANSI color escape codes are parsed into
-		colors for each color.
+		A tool to convert ASCII art into an actual image, treating each character
+		like a pixel. Pixel opacity is determined the ASCII character used, and ANSI
+		color escape codes are parsed into colors for each color.
 	</p>
 
-	<ProjectHeading link="https://github.com/spenserblack/gengo">gengo</ProjectHeading>
+	<ProjectHeading link="https://github.com/spenserblack/gengo"
+		>gengo</ProjectHeading
+	>
 	<ProjectStats language="Rust" relation="owner" />
 	<p>
-		A multi-purpose tool to help identify the code languages within a project. Works on both work trees and bare git repositories.
+		A multi-purpose tool to help identify the code languages within a project.
+		Works on both work trees and bare git repositories.
 	</p>
 
-	<ProjectHeading link="https://github.com/o2sh/onefetch">Onefetch</ProjectHeading>
+	<ProjectHeading link="https://github.com/o2sh/onefetch"
+		>Onefetch</ProjectHeading
+	>
 	<ProjectStats language="Rust" relation="maintainer" />
 	<p>
-		A CLI tool that analyzes your repository and prints an ASCII logo for its primary language and
-		various repository statistics.
-		Think like <ExternalLink link="https://github.com/dylanaraps/neofetch"><code>neofetch</code></ExternalLink>,
-		but for a Git repository.
+		A CLI tool that analyzes your repository and prints an ASCII logo for its
+		primary language and various repository statistics. Think like <ExternalLink
+			link="https://github.com/dylanaraps/neofetch"
+			><code>neofetch</code></ExternalLink
+		>, but for a Git repository.
 	</p>
 
-	<ProjectHeading link="https://github.com/spenserblack/steamdown">Steamdown</ProjectHeading>
+	<ProjectHeading link="https://github.com/spenserblack/steamdown"
+		>Steamdown</ProjectHeading
+	>
 	<ProjectStats language="TypeScript" relation="owner" />
 	<p>
-		A parser and renderer for a markdown-like syntax. Content can be rendered
-		as <ExternalLink link="https://steamcommunity.com/comment/Recommendation/formattinghelp">Steam's formatting language</ExternalLink>,
-		or as HTML for a preview.
+		A parser and renderer for a markdown-like syntax. Content can be rendered as <ExternalLink
+			link="https://steamcommunity.com/comment/Recommendation/formattinghelp"
+			>Steam's formatting language</ExternalLink
+		>, or as HTML for a preview.
 	</p>
 </BaseLayout>

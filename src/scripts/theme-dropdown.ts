@@ -1,6 +1,10 @@
 const dropdown = document.getElementById("theme-dropdown") as HTMLDivElement;
-const button = document.getElementById("theme-dropdown-button") as HTMLButtonElement;
-const content = document.getElementById("theme-dropdown-content") as HTMLDivElement;
+const button = document.getElementById(
+  "theme-dropdown-button",
+) as HTMLButtonElement;
+const content = document.getElementById(
+  "theme-dropdown-content",
+) as HTMLDivElement;
 
 const themeKey = "spenserblack.github.io theme";
 const setTheme = (theme: string) => {
@@ -17,9 +21,15 @@ if (savedTheme !== null) {
   setTheme(savedTheme);
 }
 
-const buttonVariants: [string, HTMLButtonElement][] =  ["system", "dark", "light"]
-  .map((variant) => [variant, document.getElementById(`theme-${variant}`) as HTMLButtonElement]);
-const themeButtons = buttonVariants.map(([,button]) => button);
+const buttonVariants: [string, HTMLButtonElement][] = [
+  "system",
+  "dark",
+  "light",
+].map((variant) => [
+  variant,
+  document.getElementById(`theme-${variant}`) as HTMLButtonElement,
+]);
+const themeButtons = buttonVariants.map(([, button]) => button);
 
 const show = () => {
   content.classList.remove("hide");
@@ -41,14 +51,14 @@ const toggle = () => {
 
 button.addEventListener("click", toggle);
 button.addEventListener("blur", (e) => {
-  const isThemeButton = e.target && themeButtons.includes(e.target as HTMLButtonElement);
+  const isThemeButton =
+    e.target && themeButtons.includes(e.target as HTMLButtonElement);
   if (!isThemeButton) {
     hide();
   }
 });
 
-buttonVariants
-.forEach(([variant, button]) => {
+buttonVariants.forEach(([variant, button]) => {
   button.addEventListener("mousedown", () => {
     setTheme(variant);
     saveTheme(variant);
