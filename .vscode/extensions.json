@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "github.vscode-github-actions"
   ]
 }

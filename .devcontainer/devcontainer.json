@@ -5,7 +5,8 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions"
       ]
     }
   },
