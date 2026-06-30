@@ -15,5 +15,7 @@ jobs:
       - uses: pnpm/setup@v1
         with:
           cache: true
+      - name: Check format
+        run: pnpm format-check
       - name: Build
         run: pnpm build
