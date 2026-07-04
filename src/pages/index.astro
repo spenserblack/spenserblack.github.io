@@ -33,10 +33,26 @@ const games = mapToExternalLinks({
 ---
 
 <BaseLayout title={title}>
+	<p>
+		👋 This is my personal site. Why did I make a personal site? For these
+		reasons:
+	</p>
+	<ul>
+		<li>
+			Give myself an excuse to buy the <a href="//spenser.black"
+				><code>spenser.black</code></a
+			> domain.
+		</li>
+		<li>
+			Teach myself <ExternalLink link="https://astro.build/">Astro</ExternalLink
+			>.
+		</li>
+	</ul>
+
 	<h2>Introduction</h2>
 	<p>
-		👋 This is my personal site. I'm a developer, both for work and as a hobby,
-		and I enjoy using the following languages:
+		I'm a developer, both for work and as a hobby, and I enjoy using the
+		following languages:
 	</p>
 	<LinkList items={languages} />
 	<p>
@@ -49,8 +65,7 @@ const games = mapToExternalLinks({
 		> or <ExternalLink link="https://vuejs.org/">Vue</ExternalLink>. This site
 		has been written with <strong
 			><ExternalLink link="https://astro.build/">Astro</ExternalLink></strong
-		>, both as a means of teaching myself Astro and also because it seemed like
-		a good tool to build this site.
+		>, since it seemed like a good tool to build a static site.
 	</p>
 
 	<p>
