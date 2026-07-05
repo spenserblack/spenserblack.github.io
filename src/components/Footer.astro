@@ -1,5 +1,6 @@
 ---
 import ExternalLink from "./ExternalLink.astro";
+const email = "me@spenser.black";
 const bluesky = "https://bsky.app/profile/spenser.black";
 const codeberg = "https://codeberg.org/spenserblack";
 const github = "https://github.com/spenserblack";
@@ -10,8 +11,9 @@ const sourceCode = `${github}/spenserblack.github.io`;
 	<h2>Links</h2>
 	<ul class="horizontal">
 		<li>
-			<strong>Socials</strong>
+			<strong>Contact</strong>
 			<ul class="vertical">
+				<li><a href={`mailto:${email}`}>{email}</a></li>
 				<li><ExternalLink link={bluesky}>Bluesky</ExternalLink></li>
 				<li><ExternalLink link={codeberg}>Codeberg</ExternalLink></li>
 				<li><ExternalLink link={github}>GitHub</ExternalLink></li>
