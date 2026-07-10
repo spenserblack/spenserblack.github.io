@@ -28,15 +28,25 @@ const { language, relation } = Astro.props;
 	}
 	dt {
 		font-weight: bold;
-		grid-row: 1;
+		grid-column: 1;
 	}
 	dd {
-		grid-row: 2;
+		grid-column: 2;
 	}
-	dt,
-	dd {
-		margin: 0;
-		text-align: center;
+	@media (min-width: 640px) {
+		dt {
+			grid-column: unset;
+			grid-row: 1;
+		}
+		dd {
+			grid-column: unset;
+			grid-row: 2;
+		}
+		dt,
+		dd {
+			margin: 0;
+			text-align: center;
+		}
 	}
 	.relation {
 		text-decoration: underline;
