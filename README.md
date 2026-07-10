@@ -22,3 +22,14 @@ pnpm run preview
 ```shell
 pnpm run format
 ```
+
+## Vendored files
+
+### Logos
+
+Here are the sources for each brand's set of logos:
+
+- [Bluesky](https://bsky.social/about/blog/press-faq) ([media kit](https://drive.google.com/drive/folders/16mlJPfWNnc6jj-3vGZ88SFysIY13GBp0?usp=drive_link))
+- [Codeberg](https://codeberg.org/Codeberg/Design)
+- [GitHub](https://brand.github.com/foundations/logo)
+- [Tangled](https://tangled.org/brand)

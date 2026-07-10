@@ -1,5 +1,6 @@
 ---
 import ExternalLink from "./ExternalLink.astro";
+import SocialLogos from "./SocialLogos.astro";
 const email = "me@spenser.black";
 const bluesky = "https://bsky.app/profile/spenser.black";
 const codeberg = "https://codeberg.org/spenserblack";
@@ -15,10 +16,38 @@ const sourceCode = `${github}/spenserblack.github.io`;
 			<strong>Contacts and socials</strong>
 			<ul class="vertical">
 				<li><a href={`mailto:${email}`}>{email}</a></li>
-				<li><ExternalLink link={bluesky}>Bluesky</ExternalLink></li>
-				<li><ExternalLink link={codeberg}>Codeberg</ExternalLink></li>
-				<li><ExternalLink link={github}>GitHub</ExternalLink></li>
-				<li><ExternalLink link={tangled}>Tangled</ExternalLink></li>
+				<li>
+					<SocialLogos
+						brand="Bluesky"
+						dark="bluesky_media_kit_logo_transparent_3.svg"
+						light="bluesky_media_kit_logo_transparent_4.svg"
+					/>
+					<ExternalLink link={bluesky}>Bluesky</ExternalLink>
+				</li>
+				<li>
+					<SocialLogos
+						brand="Codeberg"
+						dark="codeberg-logo_icon_white.svg"
+						light="codeberg-logo_special_fake-transaprency.svg"
+					/>
+					<ExternalLink link={codeberg}>Codeberg</ExternalLink>
+				</li>
+				<li>
+					<SocialLogos
+						brand="GitHub"
+						dark="GitHub_Invertocat_White.svg"
+						light="GitHub_Invertocat_Black.svg"
+					/>
+					<ExternalLink link={github}>GitHub</ExternalLink>
+				</li>
+				<li>
+					<SocialLogos
+						brand="Tangled"
+						dark="tangled_dolly_face_white.svg"
+						light="tangled_dolly_face_black.svg"
+					/>
+					<ExternalLink link={tangled}>Tangled</ExternalLink>
+				</li>
 			</ul>
 		</li>
 		<li>
