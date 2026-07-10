@@ -36,7 +36,13 @@ const sourceCode = `${github}/spenserblack.github.io`;
 		justify-content: space-around;
 	}
 	ul.horizontal {
-		flex-direction: row;
+		/* NOTE Make Don't display items horizontally unless the screen is wide enough. */
+		flex-direction: column;
+	}
+	@media (min-width: 640px) {
+		ul.horizontal {
+			flex-direction: row;
+		}
 	}
 	ul.vertical {
 		flex-direction: column;
