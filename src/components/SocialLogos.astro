@@ -1,0 +1,34 @@
+---
+type Props = {
+	brand: string;
+	light?: string;
+	dark?: string;
+};
+
+const { brand, light, dark } = Astro.props;
+---
+
+{
+	dark && (
+		<img
+			class="logo dark-only"
+			src={`/vendored/${dark}`}
+			alt={`${brand} Logo (dark theme)`}
+		/>
+	)
+}{
+	light && (
+		<img
+			class="logo light-only"
+			src={`/vendored/${light}`}
+			alt={`${brand} Logo (light theme)`}
+		/>
+	)
+}
+<style>
+	img {
+		max-width: 1em;
+		max-height: 1em;
+		margin-right: 0.25em;
+	}
+</style>

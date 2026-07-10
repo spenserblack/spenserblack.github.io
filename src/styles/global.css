@@ -35,6 +35,9 @@
   * mode detection. I'm just assuming those people prefer dark mode, and making that the default
   * when it's unknown.
   */
+.light-only {
+  display: none;
+}
 @media (prefers-color-scheme: light) {
   :root {
     --main-bg: var(--light-main-bg);
@@ -44,6 +47,12 @@
     --link: var(--light-link);
     --link-visited: var(--light-link-visited);
     --link-hover: var(--light-link-hover);
+  }
+  .dark-only {
+    display: none;
+  }
+  .light-only {
+    display: revert;
   }
 }
 
@@ -56,6 +65,12 @@
   --link-visited: var(--light-link-visited);
   --link-hover: var(--light-link-hover);
 }
+:root[data-theme="light"] .light-only {
+  display: revert;
+}
+:root[data-theme="light"] .dark-only {
+  display: none !important;
+}
 
 :root[data-theme="dark"] {
   --main-bg: var(--dark-main-bg);
@@ -65,6 +80,12 @@
   --link: var(--dark-link);
   --link-visited: var(--dark-link-visited);
   --link-hover: var(--dark-link-visited);
+}
+:root[data-theme="dark"] .dark-only {
+  display: revert;
+}
+:root[data-theme="dark"] .light-only {
+  display: none !important;
 }
 
 body {
