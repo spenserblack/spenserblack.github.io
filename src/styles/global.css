@@ -129,3 +129,26 @@ button.primary,
 .hide {
   display: none;
 }
+
+/* Forms: {{{ */
+label {
+  font-weight: 600;
+  display: block;
+}
+.option-input {
+  display: block;
+}
+.option-input input[type="radio"],
+form .inline input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+.option-input label {
+  display: inline-block;
+}
+@media (min-width: 640px) {
+  .option-input {
+    display: inline-block;
+  }
+}
+/* }}} */
