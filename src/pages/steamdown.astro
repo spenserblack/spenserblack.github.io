@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExternalLink from "../components/ExternalLink.astro";
+const title = "Steamdown";
+const markupLink =
+	"https://steamcommunity.com/comment/Recommendation/formattinghelp";
+const placeholder = `# Hello, Steam!
+
+This is my review about the __SOME GAME__! I like it *a lot!*
+
+Spoiler alert: >!the good guys win!<.`;
+---
+
+<BaseLayout title={title}>
+	<h2>
+		Markdown to <ExternalLink link={markupLink}>Steam Markup</ExternalLink> converter
+	</h2>
+	<p>
+		This is a tool I wrote to convert Markdown (well, a Markdown-<em>like</em> syntax)
+		to <ExternalLink link={markupLink}>Steam's markup language</ExternalLink>.
+		Check out <a href="/projects">my projects</a> for more information.
+	</p>
+	<form id="steamdown-form">
+		<label for="steamdown-source">Source</label>
+		<textarea
+			id="steamdown-source"
+			name="steamdown-source"
+			autocomplete="off"
+			autocapitalize="sentences"
+			autofocus
+			placeholder={placeholder}
+			spellcheck="true"
+			wrap="soft"
+			cols="90"
+			rows="10">{placeholder}</textarea
+		>
+		<fieldset class="inline">
+			<legend>Output style</legend>
+			<div class="option-input">
+				<input
+					type="radio"
+					id="radio-markup"
+					name="output"
+					value="markup"
+					checked
+				/>
+				<label for="radio-markup">Markup</label>
+			</div>
+			<div class="option-input">
+				<input type="radio" id="radio-preview" name="output" value="preview" />
+				<label for="radio-preview">Preview</label>
+			</div>
+		</fieldset>
+	</form>
+
+	<h3>Output</h3>
+	<div id="outputs">
+		<output id="output-markup" for="steamdown-source radio-markup">
+			<pre id="output-markup-content"></pre>
+		</output>
+		<output id="output-preview" for="steamdown-source radio-preview"></output>
+	</div>
+</BaseLayout>
+
+<script>
+	const form = document.getElementById("steamdown-form") as HTMLFormElement;
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+	});
+</script>
+
+<script>
+	import { parse, render } from "@steamdown/core";
+	import { render as renderHTML } from "@steamdown/html";
+
+	const sourceInput = document.getElementById(
+		"steamdown-source",
+	) as HTMLTextAreaElement;
+	const radioMarkup = document.getElementById(
+		"radio-markup",
+	) as HTMLInputElement;
+	const radioPreview = document.getElementById(
+		"radio-preview",
+	) as HTMLInputElement;
+	const outputMarkup = document.getElementById(
+		"output-markup",
+	) as HTMLOutputElement;
+	const outputPreview = document.getElementById(
+		"output-preview",
+	) as HTMLOutputElement;
+	const markupContent = document.getElementById(
+		"output-markup-content",
+	) as HTMLPreElement;
+
+	const toggleOutput = (output: "markup" | "preview") => {
+		if (output === "markup") {
+			outputMarkup.style.display = "";
+			outputPreview.style.display = "none";
+		} else {
+			outputMarkup.style.display = "none";
+			outputPreview.style.display = "";
+		}
+	};
+
+	toggleOutput("markup");
+	radioMarkup.addEventListener("input", () => {
+		toggleOutput("markup");
+	});
+	radioPreview.addEventListener("input", () => {
+		toggleOutput("preview");
+	});
+
+	const renderMarkdown = () => {
+		const source = sourceInput.value;
+		const [tree, context] = parse(source);
+		const markup = render(tree, context);
+		const html = renderHTML(tree, context);
+
+		const codeLines = markup.split("\n").flatMap((line) => {
+			const code = document.createElement("code");
+			code.textContent = line;
+			const newline = document.createTextNode("\n");
+			return [code, newline];
+		});
+		markupContent.replaceChildren(...codeLines);
+		outputPreview.innerHTML = html;
+	};
+	renderMarkdown();
+	sourceInput.addEventListener("input", renderMarkdown);
+</script>
+
+<style is:global>
+	.spoiler {
+		color: white;
+		background-color: white;
+	}
+	.spoiler:hover {
+		color: black;
+	}
+
+	:root[data-theme="light"] .spoiler {
+		color: black;
+		background-color: black;
+	}
+	:root[data-theme="light"] .spoiler:hover {
+		color: white;
+	}
+	:root[data-theme="dark"] .spoiler {
+		color: white;
+		background-color: white;
+	}
+	:root[data-theme="dark"] .spoiler:hover {
+		color: black;
+	}
+	@media (prefers-color-scheme: light) {
+		.spoiler {
+			color: black;
+			background-color: black;
+		}
+		.spoiler:hover {
+			color: white;
+		}
+	}
+</style>

@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@steamdown/core':
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2
+      '@steamdown/html':
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(@steamdown/core@1.0.0-beta.2)
       astro:
         specifier: ^7.0.2
         version: 7.0.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
@@ -651,6 +657,14 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
+  '@steamdown/core@1.0.0-beta.2':
+    resolution: {integrity: sha512-9dpmTEmcRy0+5xr95W7yzaci8ka+Nc1HC8NnU5v8RdGkvDmeD02WbIJ0a/AJ/loffQX35hrL1q8t8C+37lU4ZA==}
+
+  '@steamdown/html@1.0.0-beta.2':
+    resolution: {integrity: sha512-yL9J8710BoLOLPg9mvSo519DksLOaAv0kZAGeSLjsqpiWnQH0GWbOZR/3Pe3Aia5I00F8Yxj4xjyvw6DHtImoQ==}
+    peerDependencies:
+      '@steamdown/core': ^1.0.0-beta.2
+
   '@tybys/wasm-util@0.10.3':
     resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
 
@@ -827,6 +841,14 @@ packages:
     resolution: {integrity: sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==}
     engines: {node: '>=18'}
     hasBin: true
+
+  escape-goat@4.0.0:
+    resolution: {integrity: sha512-2Sd4ShcWxbx6OY1IHyla/CVNwvg7XwZVoXZHcSu9w9SReNP1EzzD5T8NWKIR38fIqEns9kDWKUQTXXAmlDrdPg==}
+    engines: {node: '>=12'}
+
+  escape-string-regexp@5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    engines: {node: '>=12'}
 
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
@@ -1886,6 +1908,15 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
+  '@steamdown/core@1.0.0-beta.2':
+    dependencies:
+      escape-string-regexp: 5.0.0
+
+  '@steamdown/html@1.0.0-beta.2(@steamdown/core@1.0.0-beta.2)':
+    dependencies:
+      '@steamdown/core': 1.0.0-beta.2
+      escape-goat: 4.0.0
+
   '@tybys/wasm-util@0.10.3':
     dependencies:
       tslib: 2.8.1
@@ -2149,6 +2180,10 @@ snapshots:
       '@esbuild/win32-arm64': 0.28.1
       '@esbuild/win32-ia32': 0.28.1
       '@esbuild/win32-x64': 0.28.1
+
+  escape-goat@4.0.0: {}
+
+  escape-string-regexp@5.0.0: {}
 
   estree-walker@2.0.2: {}
 
