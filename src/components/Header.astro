@@ -7,15 +7,23 @@ const pages: [description: string, link: string][] = [
 ---
 
 <header>
-	<nav>
-		{
-			pages.map(([description, link]) => (
-				<a class="button primary" href={link}>
-					{description}
-				</a>
-			))
-		}
-	</nav>
+	<div class="dropdown-container">
+		<button
+			aria-expanded="false"
+			aria-controls="nav-menu"
+			id="nav-menu-button"
+			class="primary">Navigation</button
+		>
+		<nav id="nav-menu">
+			{
+				pages.map(([description, link]) => (
+					<a class="button primary" href={link}>
+						{description}
+					</a>
+				))
+			}
+		</nav>
+	</div>
 	<div class="controls">
 		<div id="theme-dropdown" class="dropdown">
 			<button
@@ -36,6 +44,22 @@ const pages: [description: string, link: string][] = [
 	</div>
 </header>
 
+<script>
+	const button = document.getElementById(
+		"nav-menu-button",
+	) as HTMLButtonElement;
+	const menu = document.getElementById("nav-menu") as HTMLElement;
+	const cls = "expanded";
+	button.addEventListener("click", () => {
+		if (menu.classList.contains(cls)) {
+			menu.classList.remove(cls);
+			button.setAttribute("aria-expanded", "false");
+		} else {
+			menu.classList.add(cls);
+			button.setAttribute("aria-expanded", "true");
+		}
+	});
+</script>
 <script>
 	import "../scripts/theme-dropdown";
 </script>
@@ -60,7 +84,32 @@ const pages: [description: string, link: string][] = [
 		background-color: var(--contrast);
 	}
 
+	#nav-menu-button {
+		display: none;
+	}
 	nav a {
 		margin: 0 0.5rem;
+	}
+	@media screen and (max-width: 999px) {
+		#nav-menu-button {
+			display: unset;
+		}
+		nav.expanded {
+			display: flex;
+			flex-direction: column;
+			margin-top: 0.5rem;
+		}
+
+		nav a {
+			margin-bottom: 0.5rem;
+		}
+	}
+	nav {
+		display: none;
+	}
+	@media screen and (min-width: 1000px) {
+		nav {
+			display: unset;
+		}
 	}
 </style>
