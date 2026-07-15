@@ -1,8 +1,12 @@
 ---
-const pages: [description: string, link: string][] = [
+const pages: [
+	description: string,
+	link: string,
+	attrs?: Record<string, string>,
+][] = [
 	["Homepage", "/"],
 	["Projects", "/projects/"],
-	["Markdown for Steam", "/steamdown/"],
+	["Steamdown", "/steamdown/", { title: "Markdown for Steam" }],
 ];
 ---
 
@@ -16,8 +20,8 @@ const pages: [description: string, link: string][] = [
 		>
 		<nav id="nav-menu">
 			{
-				pages.map(([description, link]) => (
-					<a class="button primary" href={link}>
+				pages.map(([description, link, attrs]) => (
+					<a class="button primary" href={link} title={attrs?.title}>
 						{description}
 					</a>
 				))
