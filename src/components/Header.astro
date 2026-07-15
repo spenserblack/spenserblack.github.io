@@ -8,7 +8,12 @@ const pages: [description: string, link: string][] = [
 
 <header>
 	<div class="dropdown-container">
-	<button aria-expanded="false" aria-controls="nav-menu" id="nav-menu-button" class="primary">Navigation</button>
+		<button
+			aria-expanded="false"
+			aria-controls="nav-menu"
+			id="nav-menu-button"
+			class="primary">Navigation</button
+		>
 		<nav id="nav-menu">
 			{
 				pages.map(([description, link]) => (
@@ -40,7 +45,9 @@ const pages: [description: string, link: string][] = [
 </header>
 
 <script>
-	const button = document.getElementById("nav-menu-button") as HTMLButtonElement;
+	const button = document.getElementById(
+		"nav-menu-button",
+	) as HTMLButtonElement;
 	const menu = document.getElementById("nav-menu") as HTMLElement;
 	const cls = "expanded";
 	button.addEventListener("click", () => {
