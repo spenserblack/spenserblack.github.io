@@ -21,7 +21,7 @@
     "@steamdown/core": "1.0.0-beta.2",
     "@steamdown/html": "1.0.0-beta.2",
     "astro": "^7.0.2",
-    "svelte": "^5.56.6",
+    "svelte": "^5.56.5",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
