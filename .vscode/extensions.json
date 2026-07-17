@@ -2,6 +2,7 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "editorconfig.editorconfig",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "svelte.svelte-vscode"
   ]
 }
