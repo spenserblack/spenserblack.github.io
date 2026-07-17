@@ -1,3 +1,5 @@
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - svelte@5.56.6

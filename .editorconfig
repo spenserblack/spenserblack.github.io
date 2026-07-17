@@ -36,6 +36,11 @@ indent_size = 2
 indent_style = tab
 indent_size = 2
 
+# Svelte
+[*.svelte]
+indent_style = space
+indent_size = 2
+
 # SVG
 [*.svg]
 indent_style = space

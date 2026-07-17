@@ -16,12 +16,16 @@
     "format-check": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/svelte": "^9.0.1",
     "@steamdown/core": "1.0.0-beta.2",
     "@steamdown/html": "1.0.0-beta.2",
-    "astro": "^7.0.2"
+    "astro": "^7.0.2",
+    "svelte": "^5.56.6",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "prettier": "^3.9.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^4.1.1"
   }
 }
