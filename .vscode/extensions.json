@@ -3,6 +3,7 @@
     "astro-build.astro-vscode",
     "editorconfig.editorconfig",
     "github.vscode-github-actions",
+    "streetsidesoftware.code-spell-checker",
     "svelte.svelte-vscode"
   ]
 }

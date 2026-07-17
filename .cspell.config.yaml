@@ -1,0 +1,20 @@
+version: "0.2"
+language: en-US
+ignorePaths:
+  - "dist/**"
+  - "node_modules/**"
+  - "pnpm-lock.yaml"
+  - "public/vendored/**"
+words:
+  - Baki
+  - Codeberg
+  - esbuild
+  - gengo
+  - inkscape
+  - invertocat
+  - neofetch
+  - Onefetch
+  - Qilin
+  - Signalis
+  - spenserblack
+  - steamdown
