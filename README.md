@@ -1,5 +1,7 @@
 # README
 
+[![Deploy to Pages](https://github.com/spenserblack/spenserblack.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/spenserblack/spenserblack.github.io/actions/workflows/deploy.yml)
+
 This is a static site built with [Astro](https://astro.build/).
 
 ## Development
