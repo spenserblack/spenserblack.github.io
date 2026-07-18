@@ -17,15 +17,26 @@
   const createPrefix = createOptionalNameMaker(getPrefix, 0.25);
   const createSuffix = createOptionalNameMaker(getSuffix);
 
-  let prefix = $state(createPrefix());
+  let prefix = $state<string | null>(null);
   let name = $state(createName());
-  let suffix = $state(createSuffix());
+  let suffix = $state<string | null>(null);
+
+  const setNameDecorators = () => {
+    suffix = createSuffix();
+    // NOTE If the suffix is null, guarantee a prefix to ensure that the full nickname
+    //      is unique.
+    if (suffix == null) {
+      prefix = getPrefix();
+    } else {
+      prefix = createPrefix();
+    }
+  };
+  setNameDecorators();
 
   const onSubmit = (e: SubmitEvent) => {
     e.preventDefault();
-    prefix = createPrefix();
     name = createName();
-    suffix = createSuffix();
+    setNameDecorators();
   };
 </script>
 
