@@ -1,6 +1,7 @@
 <script lang="ts">
   import { parse, render } from "@steamdown/core";
   import { render as renderHTML } from "@steamdown/html";
+  import { write as writeClipboard } from "../scripts/clipboard";
 
   type Output = "markup" | "preview";
   let output = $state<Output>("markup");
@@ -19,6 +20,19 @@ Spoiler alert: >!the good guys win!<.`;
 
   const onSubmit = (e: SubmitEvent) => {
     e.preventDefault();
+  };
+
+  let copied = $state(false);
+  let copyTimeout: number | null = null;
+  const onCopyClick = async () => {
+    if (copyTimeout != null) {
+      clearTimeout(copyTimeout);
+    }
+    await writeClipboard(markup);
+    copied = true;
+    copyTimeout = setTimeout(() => {
+      copied = false;
+    }, 750);
   };
 </script>
 
@@ -62,6 +76,14 @@ Spoiler alert: >!the good guys win!<.`;
 <h3>Output</h3>
 <div id="outputs">
   {#if output === "markup"}
+    <button
+      type="button"
+      id="button-copy-markup"
+      class="primary"
+      title="Copy markup to clipboard"
+      onclick={onCopyClick}
+      >Cop{#if copied}ied{:else}y{/if}</button
+    >
     <output id="output-markup" for="steamdown-source radio-markup">
       <pre id="output-markup-content">{#each markup.split("\n") as line}<code
             >{line}</code
@@ -113,7 +135,15 @@ Spoiler alert: >!the good guys win!<.`;
     width: 100%;
     margin: auto;
   }
+  #outputs {
+    position: relative;
+  }
   #output-markup-content {
     overflow-x: auto;
+  }
+  #button-copy-markup {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 </style>
