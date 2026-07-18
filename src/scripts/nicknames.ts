@@ -4,7 +4,7 @@
  */
 import { createPick } from "./chance";
 
-const prefixes: string[] = [
+export const prefixes: string[] = [
   "Divine",
   "Daylight",
   "The",
@@ -88,7 +88,7 @@ const prefixes: string[] = [
   "Old",
 ];
 
-const names: string[] = [
+export const names: string[] = [
   "Doctor",
   "Rat",
   "God",
@@ -156,7 +156,7 @@ const names: string[] = [
   "Sword",
 ];
 
-const suffixes: string[] = [
+export const suffixes: string[] = [
   "of Three Mountains",
   "of Death",
   "of Disorder",
