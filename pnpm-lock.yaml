@@ -12,11 +12,11 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1(astro@7.1.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(yaml@2.9.0))(esbuild@0.28.1)(svelte@5.56.6)(typescript@6.0.3)(yaml@2.9.0)
       '@steamdown/core':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2
+        specifier: ^1.0.0
+        version: 1.0.0
       '@steamdown/html':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(@steamdown/core@1.0.0-beta.2)
+        specifier: ^1.0.0
+        version: 1.0.0(@steamdown/core@1.0.0)
       astro:
         specifier: ^7.1.1
         version: 7.1.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(yaml@2.9.0)
@@ -943,13 +943,13 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@steamdown/core@1.0.0-beta.2':
-    resolution: {integrity: sha512-9dpmTEmcRy0+5xr95W7yzaci8ka+Nc1HC8NnU5v8RdGkvDmeD02WbIJ0a/AJ/loffQX35hrL1q8t8C+37lU4ZA==}
+  '@steamdown/core@1.0.0':
+    resolution: {integrity: sha512-ei3TP8h4/+eyTCtEHrplHkxjFSJ6IXBpG0zyQ3JYBYVa8wxsgl0Sml0geV6djpqL9AJUdIur2rcU1IWzSTpIyg==}
 
-  '@steamdown/html@1.0.0-beta.2':
-    resolution: {integrity: sha512-yL9J8710BoLOLPg9mvSo519DksLOaAv0kZAGeSLjsqpiWnQH0GWbOZR/3Pe3Aia5I00F8Yxj4xjyvw6DHtImoQ==}
+  '@steamdown/html@1.0.0':
+    resolution: {integrity: sha512-ROj8tQhytyFURpRD4lppRREqbK+OQ/XwalUtGw7Apbp1AxQ4HzjKmLP1JjO+P1w1LnGmhm/x6f0W0zHIymp/ew==}
     peerDependencies:
-      '@steamdown/core': ^1.0.0-beta.2
+      '@steamdown/core': ^1.0.0
 
   '@sveltejs/acorn-typescript@1.0.11':
     resolution: {integrity: sha512-LFuZUkjJ9iF7JZye/aG5XM0SFcQ5VyL0oVX4WJ9dc0Va3R3s0OauX1BESVCb+YN/ol8TAfqGDDAQsTG627Y5kw==}
@@ -2661,13 +2661,13 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@steamdown/core@1.0.0-beta.2':
+  '@steamdown/core@1.0.0':
     dependencies:
       escape-string-regexp: 5.0.0
 
-  '@steamdown/html@1.0.0-beta.2(@steamdown/core@1.0.0-beta.2)':
+  '@steamdown/html@1.0.0(@steamdown/core@1.0.0)':
     dependencies:
-      '@steamdown/core': 1.0.0-beta.2
+      '@steamdown/core': 1.0.0
       escape-goat: 4.0.0
 
   '@sveltejs/acorn-typescript@1.0.11(acorn@8.17.0)':
