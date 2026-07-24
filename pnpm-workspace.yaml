@@ -2,5 +2,5 @@ allowBuilds:
   esbuild: true
   sharp: true
 minimumReleaseAgeExclude:
-  - '@steamdown/core@1.0.0'
-  - '@steamdown/html@1.0.0'
+  - "@steamdown/core@1.0.0"
+  - "@steamdown/html@1.0.0"
