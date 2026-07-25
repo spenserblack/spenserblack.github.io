@@ -20,9 +20,9 @@ importers:
       astro:
         specifier: ^7.1.3
         version: 7.1.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(yaml@2.9.0)
-      random-js:
-        specifier: ^2.1.0
-        version: 2.1.0
+      rand-seed:
+        specifier: ^3.0.0
+        version: 3.0.0
       svelte:
         specifier: ^5.56.7
         version: 5.56.7
@@ -1611,8 +1611,8 @@ packages:
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
 
-  random-js@2.1.0:
-    resolution: {integrity: sha512-CRUyWmnzmZBA7RZSVGq0xMqmgCyPPxbiKNLFA5ud7KenojVX2s7Gv+V7eB52beKTPGxWRnVZ7D/tCIgYJJ8vNQ==}
+  rand-seed@3.0.0:
+    resolution: {integrity: sha512-Zy8wnL6whyIAGOX2i9Mn1Orq3t9TNizGUk8euxamr60Z3PmspwFeT+vCZPcYMAR5nOztnAKPtVi3jt8EzmCB6g==}
 
   readdirp@5.0.0:
     resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
@@ -3412,7 +3412,7 @@ snapshots:
 
   radix3@1.1.2: {}
 
-  random-js@2.1.0: {}
+  rand-seed@3.0.0: {}
 
   readdirp@5.0.0: {}
 

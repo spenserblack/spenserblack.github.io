@@ -17,11 +17,12 @@
       name = "";
       suffix = null;
     } else {
-      const seedValue = uuidV5(value, true);
+      const seedValue = uuidV5(value);
 
       // NOTE Very simple and naive implementation of chances.
-      const dropSuffix = seedValue[0] % 2 === 0;
-      const dropPrefix = !dropSuffix && seedValue[0] % 4 === 0;
+      const naiveRandom = seedValue.charCodeAt(0);
+      const dropSuffix = naiveRandom % 2 === 0;
+      const dropPrefix = !dropSuffix && naiveRandom % 4 === 0;
       prefix = dropPrefix ? null : pickPrefix(seedValue);
       suffix = dropSuffix ? null : pickSuffix(seedValue);
       name = pickName(seedValue);

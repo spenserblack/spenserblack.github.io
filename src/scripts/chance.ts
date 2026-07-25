@@ -1,7 +1,7 @@
 /**
  * @module chance Helpers for randomness.
  */
-import { Random, MersenneTwister19937 } from "random-js";
+import Random from "rand-seed";
 
 /**
  * Roughly a 50/50 chance of true or false. `chance` is optional, but should be a number between 0 and 1 if set.
@@ -9,26 +9,18 @@ import { Random, MersenneTwister19937 } from "random-js";
 export const coinFlip = (chance?: number): boolean =>
   Math.random() <= (chance ?? 0.5);
 
-const seededRandom = (seed: number | number[]): Random => {
-  const engine =
-    typeof seed === "number"
-      ? MersenneTwister19937.seed(seed)
-      : MersenneTwister19937.seedWithArray(seed);
-  return new Random(engine);
-};
-
 /**
  * Picks a random item from an array.
  */
-export const pick = <T>(array: T[], seed?: number | number[]): T =>
-  seed == null
-    ? array[Math.floor(Math.random() * array.length)]
-    : seededRandom(seed).pick(array);
+export const pick = <T>(array: T[], seed?: string): T => {
+  const random = new Random(seed);
+  return array[Math.floor(random.next() * array.length)];
+};
 
 /**
  * Creates function that randomly picks from the same array each time.
  */
 export const createPick =
-  <T>(array: T[]): ((seed?: number | number[]) => T) =>
+  <T>(array: T[]): ((seed?: string) => T) =>
   (seed) =>
     pick(array, seed);
