@@ -20,7 +20,7 @@
     "@astrojs/svelte": "^9.0.1",
     "@steamdown/core": "^1.0.0",
     "@steamdown/html": "^1.0.0",
-    "astro": "^7.1.1",
+    "astro": "^7.1.3",
     "svelte": "^5.56.7",
     "typescript": "^6.0.3",
     "uuid": "^14.0.1"
