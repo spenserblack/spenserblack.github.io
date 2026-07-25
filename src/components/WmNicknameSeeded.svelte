@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Random from "rand-seed";
   import { pickPrefix, pickName, pickSuffix } from "../scripts/nicknames";
   import { uuidV5 } from "../scripts/uuid";
 
@@ -18,14 +19,15 @@
       suffix = null;
     } else {
       const seedValue = uuidV5(value);
+      const random = new Random(seedValue);
+      const rng = () => random.next();
 
       // NOTE Very simple and naive implementation of chances.
-      const naiveRandom = seedValue.charCodeAt(0);
-      const dropSuffix = naiveRandom % 2 === 0;
-      const dropPrefix = !dropSuffix && naiveRandom % 4 === 0;
-      prefix = dropPrefix ? null : pickPrefix(seedValue);
-      suffix = dropSuffix ? null : pickSuffix(seedValue);
-      name = pickName(seedValue);
+      const dropSuffix = rng() < 0.5;
+      const dropPrefix = !dropSuffix && rng() < 0.25;
+      prefix = dropPrefix ? null : pickPrefix(rng);
+      suffix = dropSuffix ? null : pickSuffix(rng);
+      name = pickName(rng);
     }
   };
 

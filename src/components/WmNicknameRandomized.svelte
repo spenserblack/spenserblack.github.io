@@ -1,3 +1,10 @@
+<script module lang="ts">
+  import Random from "rand-seed";
+  import { type Rng } from "../scripts/chance";
+  const random = new Random();
+  const rng = () => random.next();
+</script>
+
 <script lang="ts">
   import { onMount } from "svelte";
   import { coinFlip } from "../scripts/chance";
@@ -13,16 +20,17 @@
    * @param nullChance If set, this is the chance that the result will be null. Defaults to a 50/50 chance.
    */
   const createOptionalNameMaker =
-    (maker: () => string, nullChance?: number) => () =>
-      coinFlip(nullChance) ? null : maker();
+    (maker: (rng: Rng) => string, nullChance?: number) => (rng: Rng) =>
+      coinFlip(nullChance) ? null : maker(rng);
   const createPrefix = createOptionalNameMaker(pickPrefix, 0.25);
   const createSuffix = createOptionalNameMaker(pickSuffix);
 
-  const initialName = createName();
-  const initialSuffix = createSuffix();
+  const initialName = createName(rng);
+  const initialSuffix = createSuffix(rng);
   // NOTE If the suffix is null, guarantee a prefix to ensure that the full nickname is
   //      unique.
-  const initialPrefix = initialSuffix == null ? pickPrefix() : createPrefix();
+  const initialPrefix =
+    initialSuffix == null ? pickPrefix(rng) : createPrefix(rng);
 
   let {
     prefix = $bindable<string | null>(initialPrefix),
@@ -31,20 +39,20 @@
   } = $props();
 
   const setNameDecorators = () => {
-    suffix = createSuffix();
+    suffix = createSuffix(rng);
     // NOTE If the suffix is null, guarantee a prefix to ensure that the full nickname
     //      is unique.
     if (suffix == null) {
-      prefix = pickPrefix();
+      prefix = pickPrefix(rng);
     } else {
-      prefix = createPrefix();
+      prefix = createPrefix(rng);
     }
   };
   onMount(setNameDecorators);
 
   const onSubmit = (e: SubmitEvent) => {
     e.preventDefault();
-    name = createName();
+    name = createName(rng);
     setNameDecorators();
   };
 </script>
