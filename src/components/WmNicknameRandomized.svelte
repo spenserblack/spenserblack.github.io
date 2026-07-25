@@ -2,9 +2,9 @@
   import { onMount } from "svelte";
   import { coinFlip } from "../scripts/chance";
   import {
-    prefix as getPrefix,
-    name as createName,
-    suffix as getSuffix,
+    pickPrefix,
+    pickName as createName,
+    pickSuffix,
   } from "../scripts/nicknames";
 
   /**
@@ -15,14 +15,14 @@
   const createOptionalNameMaker =
     (maker: () => string, nullChance?: number) => () =>
       coinFlip(nullChance) ? null : maker();
-  const createPrefix = createOptionalNameMaker(getPrefix, 0.25);
-  const createSuffix = createOptionalNameMaker(getSuffix);
+  const createPrefix = createOptionalNameMaker(pickPrefix, 0.25);
+  const createSuffix = createOptionalNameMaker(pickSuffix);
 
   const initialName = createName();
   const initialSuffix = createSuffix();
   // NOTE If the suffix is null, guarantee a prefix to ensure that the full nickname is
   //      unique.
-  const initialPrefix = initialSuffix == null ? getPrefix() : createPrefix();
+  const initialPrefix = initialSuffix == null ? pickPrefix() : createPrefix();
 
   let {
     prefix = $bindable<string | null>(initialPrefix),
@@ -35,7 +35,7 @@
     // NOTE If the suffix is null, guarantee a prefix to ensure that the full nickname
     //      is unique.
     if (suffix == null) {
-      prefix = getPrefix();
+      prefix = pickPrefix();
     } else {
       prefix = createPrefix();
     }
