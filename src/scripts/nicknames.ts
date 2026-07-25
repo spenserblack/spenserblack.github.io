@@ -2,7 +2,7 @@
  * @module nicknames
  * The adjectives and nouns are inspired by the 108 heroes of the book Water Margin.
  */
-import { createPick } from "./chance";
+import { createPick, type Rng } from "./chance";
 
 export const prefixes: string[] = [
   "Divine",
@@ -171,6 +171,8 @@ export const suffixes: string[] = [
   "of the Western Pass",
 ];
 
-export const pickPrefix: (seed?: string) => string = createPick(prefixes);
-export const pickName: (seed?: string) => string = createPick(names);
-export const pickSuffix: (seed?: string) => string = createPick(suffixes);
+export type RandomPick = (rng: Rng) => string;
+
+export const pickPrefix: RandomPick = createPick(prefixes);
+export const pickName: RandomPick = createPick(names);
+export const pickSuffix: RandomPick = createPick(suffixes);
