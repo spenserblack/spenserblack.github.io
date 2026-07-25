@@ -171,6 +171,8 @@ export const suffixes: string[] = [
   "of the Western Pass",
 ];
 
-export const prefix: () => string = createPick(prefixes);
-export const name: () => string = createPick(names);
-export const suffix: () => string = createPick(suffixes);
+export const pickPrefix: (seed?: number | number[]) => string =
+  createPick(prefixes);
+export const pickName: (seed?: number | number[]) => string = createPick(names);
+export const pickSuffix: (seed?: number | number[]) => string =
+  createPick(suffixes);

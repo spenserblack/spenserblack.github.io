@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { prefixes, names, suffixes } from "../scripts/nicknames";
+  import { pickPrefix, pickName, pickSuffix } from "../scripts/nicknames";
   import { uuidV5 } from "../scripts/uuid";
 
   let {
@@ -10,12 +10,6 @@
   } = $props();
   let seed = $state("");
 
-  /**
-   * Limits an unbound index to the length of the given array, returning the indexed value.
-   */
-  const arrGetBound = <T,>(arr: T[], unbound: number): T =>
-    arr[unbound % arr.length];
-
   const setSeed = (value: string): void => {
     seed = value;
     if (value === "") {
@@ -23,16 +17,14 @@
       name = "";
       suffix = null;
     } else {
-      const buffer = uuidV5(value, true);
-
-      // NOTE Naive implementation of transforming a UUID into a single numerical value.
-      const hash = buffer.reduce((hash, b) => ((hash << 8) | b) % 0xfffff, 0);
+      const seedValue = uuidV5(value, true);
 
       // NOTE Very simple and naive implementation of chances.
-      suffix = hash % 2 === 0 ? null : arrGetBound(suffixes, hash);
-      prefix =
-        hash % 4 === 0 && suffix != null ? null : arrGetBound(prefixes, hash);
-      name = arrGetBound(names, hash);
+      const dropSuffix = seedValue[0] % 2 === 0;
+      const dropPrefix = !dropSuffix && seedValue[0] % 4 === 0;
+      prefix = dropPrefix ? null : pickPrefix(seedValue);
+      suffix = dropSuffix ? null : pickSuffix(seedValue);
+      name = pickName(seedValue);
     }
   };
 
