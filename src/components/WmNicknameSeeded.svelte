@@ -94,6 +94,9 @@
 
 {#if link != null}
   <p>
-    <strong>Share link:</strong> <code>{link}</code> <button type="button" class="primary" onclick={copyShareLink}>Cop{#if copyConfirmation}ied{:else}y{/if}</button>
+    <strong>Share link:</strong> <code>{link}</code>
+    <button type="button" class="primary" onclick={copyShareLink}
+      >Cop{#if copyConfirmation}ied{:else}y{/if}</button
+    >
   </p>
 {/if}
