@@ -96,37 +96,37 @@ Spoiler alert: >!the good guys win!<.`;
   {/if}
 </div>
 
-<style>
+<style lang="scss">
   :global {
     .spoiler {
       color: white;
       background-color: white;
-    }
-    .spoiler:hover {
-      color: black;
+      &:hover {
+        color: black;
+      }
     }
 
     :root[data-theme="light"] .spoiler {
       color: black;
       background-color: black;
-    }
-    :root[data-theme="light"] .spoiler:hover {
-      color: white;
+      &:hover {
+        color: white;
+      }
     }
     :root[data-theme="dark"] .spoiler {
       color: white;
       background-color: white;
-    }
-    :root[data-theme="dark"] .spoiler:hover {
-      color: black;
+      &:hover {
+        color: black;
+      }
     }
     @media (prefers-color-scheme: light) {
       .spoiler {
         color: black;
         background-color: black;
-      }
-      .spoiler:hover {
-        color: white;
+        &:hover {
+          color: white;
+        }
       }
     }
   }
