@@ -31,6 +31,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Sass
+[*.{sass,scss}]
+indent_style = space
+indent_size = 2
+
 # Shell
 [*.{sh,bash}]
 indent_style = tab
