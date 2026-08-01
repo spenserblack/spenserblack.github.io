@@ -62,22 +62,22 @@ const sourceCode = `${github}/spenserblack.github.io`;
 	</ul>
 </footer>
 
-<style>
+<style lang="scss">
 	ul {
 		display: flex;
 		justify-content: space-around;
-	}
-	ul.horizontal {
-		/* NOTE Make Don't display items horizontally unless the screen is wide enough. */
-		flex-direction: column;
+		&.horizontal {
+			// NOTE Make Don't display items horizontally unless the screen is wide enough.
+			flex-direction: column;
+		}
+		&.vertical {
+			flex-direction: column;
+		}
 	}
 	@media (min-width: 640px) {
 		ul.horizontal {
 			flex-direction: row;
 		}
-	}
-	ul.vertical {
-		flex-direction: column;
 	}
 	li {
 		display: inline-block;
