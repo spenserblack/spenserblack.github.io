@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+type BlogPost = {
+	url: string,
+	frontmatter: {
+		title: string,
+		tags?: string[],
+	},
+};
+
+export const getStaticPaths = (() => {
+	const blogPosts: BlogPost[] = Object.values(import.meta.glob("../posts/*.md", { eager: true }));
+	const tags = blogPosts.flatMap(({ frontmatter: { tags } }) => (tags ?? []));
+	const uniqueTags = [...(new Set(tags))];
+
+	return uniqueTags.map((tag) => {
+		const filtered = blogPosts.filter((post) => post.frontmatter.tags?.includes(tag) ?? false);
+
+		return {
+			params: { tag },
+			props: { posts: filtered },
+		};
+	});
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<BaseLayout title="Blog | Tags">
+	<h2>{tag}</h2>
+	<ul>
+		{posts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+	</ul>
+</BaseLayout>
