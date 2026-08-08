@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogPostTags from "../../../components/BlogPostTags.astro";
 import type { BlogPostFrontMatter } from "../../../types";
 type BlogPost = {
 	url: string,
@@ -12,7 +13,5 @@ const unique = [...(new Set(tags))];
 const sorted = unique.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
 ---
 <BaseLayout title="Blog | Tags" heading="Tags">
-	<ul>
-		{sorted.map((tag) => <li><a href={`/blog/tags/${tag}/`}>{tag}</a></li>)}
-	</ul>
+	<BlogPostTags tags={sorted} />
 </BaseLayout>

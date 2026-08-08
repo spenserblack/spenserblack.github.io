@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPostTags from "../../components/BlogPostTags.astro";
 import type { BlogPostFrontMatter } from "../../types";
 type BlogPost = {
 	url: string,
@@ -19,6 +20,7 @@ const sorted: BlogPost[] = Object.entries(blogPosts).sort(([filenameA,], [filena
 	<ul>
 		{sorted.map((post) => <li>
 			<a href={post.url}>{post.frontmatter.title}</a>
+			{post.frontmatter.tags && post.frontmatter.tags.length > 0 && <BlogPostTags tags={post.frontmatter.tags} />}
 		</li>)}
 	</ul>
 </BaseLayout>
