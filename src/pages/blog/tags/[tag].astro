@@ -1,12 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro";
+import type { BlogPostFrontMatter } from "../../../types";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 type BlogPost = {
 	url: string,
-	frontmatter: {
-		title: string,
-		tags?: string[],
-	},
+	frontmatter: BlogPostFrontMatter,
 };
 
 export const getStaticPaths = (() => {

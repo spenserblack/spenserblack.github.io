@@ -1,11 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BlogPostFrontMatter } from "../../types";
 type BlogPost = {
 	url: string,
-	frontmatter: {
-		title: string,
-		tags?: string[],
-	},
+	frontmatter: BlogPostFrontMatter,
 };
 
 const blogPosts: Record<string, BlogPost> = import.meta.glob("./posts/*.md", { eager: true });
