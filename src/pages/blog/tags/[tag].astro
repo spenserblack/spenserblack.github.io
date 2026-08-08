@@ -27,7 +27,7 @@ export const getStaticPaths = (() => {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
-<BaseLayout title="Blog | Tags">
+<BaseLayout title="Blog | Tags" heading="Tags">
 	<h2>{tag}</h2>
 	<ul>
 		{posts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
