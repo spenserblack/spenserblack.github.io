@@ -3,7 +3,8 @@ title: Placeholder
 tags:
   - development
   - markdown
+layout: ../../../layouts/MarkdownPost.astro
 ---
-# Placeholder
+## Placeholder
 
 This is a placeholder blog post.

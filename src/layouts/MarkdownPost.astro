@@ -1,0 +1,13 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import type { BlogPostFrontMatter } from "../types";
+type Props = {
+	frontmatter: BlogPostFrontMatter,
+};
+
+const { frontmatter: { title: heading } }: Props = Astro.props;
+const title = `Blog | ${heading}`;
+---
+<BaseLayout title={title} heading={heading}>
+	<slot />
+</BaseLayout>
