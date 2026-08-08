@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+type BlogPost = {
+	url: string,
+	frontmatter: {
+		title: string,
+		tags?: string[],
+	},
+};
+
+const blogPosts: Record<string, BlogPost> = import.meta.glob("./posts/*.md", { eager: true });
+// NOTE These are probably already sorted by the filesystem and the import, but just in case, and
+//			to communicate that these should be sorted by filename.
+const sorted: BlogPost[] = Object.entries(blogPosts).sort(([filenameA,], [filenameB,]) => (filenameA.toLowerCase() < filenameB.toLowerCase() ? -1 : 1)).map(([,post]) => post);
+---
+<BaseLayout title="Blog | Index" heading="Blog">
+	<h2>Index</h2>
+	<p>
+		<a href="/blog/tags">Filter by tags</a>
+	</p>
+	<ul>
+		{sorted.map((post) => <li>
+			<a href={post.url}>{post.frontmatter.title}</a>
+		</li>)}
+	</ul>
+</BaseLayout>
