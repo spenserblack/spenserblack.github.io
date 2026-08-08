@@ -14,7 +14,7 @@ const sorted: BlogPost[] = Object.entries(blogPosts).sort(([filenameA,], [filena
 <BaseLayout title="Blog | Index" heading="Blog">
 	<h2>Index</h2>
 	<p>
-		<a href="/blog/tags">Filter by tags</a>
+		<a href="/blog/tags">All tags</a>
 	</p>
 	<ul>
 		{sorted.map((post) => <li>
