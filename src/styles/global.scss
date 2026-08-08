@@ -7,6 +7,8 @@ $dark-theme: (
   "link": #fc4,
   "link-visited": #fa4,
   "link-hover": #fd5,
+  "tag-bg": #556,
+  "tag-fg": #eed,
   "contrast": #222,
 );
 
@@ -17,6 +19,8 @@ $light-theme: (
   "link": #e64,
   "link-visited": #e84,
   "link-hover": #d60,
+  "tag-bg": #fb8,
+  "tag-fg": #445,
   "contrast": #fff,
 );
 
@@ -112,6 +116,12 @@ button,
     background-color: var(--primary);
     color: var(--contrast);
   }
+}
+
+.tag {
+  padding: 0.125rem 0.5rem;
+  background-color: var(--tag-bg);
+  color: var(--tag-fg);
 }
 
 // Forms: {{{

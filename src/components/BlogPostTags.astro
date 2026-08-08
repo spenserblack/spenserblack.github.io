@@ -1,0 +1,11 @@
+---
+import BlogPostTag from './BlogPostTag.astro';
+type Props = {
+	tags: string[],
+};
+
+const { tags }: Props = Astro.props;
+---
+<ul class="tags">
+	{tags.map((tag) => <BlogPostTag tag={tag} />)}
+</ul>
