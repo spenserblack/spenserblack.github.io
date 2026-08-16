@@ -1,0 +1,24 @@
+---
+type Props = {
+	tag: string;
+};
+
+const { tag }: Props = Astro.props;
+---
+
+<li class="tag"><a href={`/blog/tags/${tag}`}>{tag}</a></li>
+
+<style lang="scss">
+	@media (min-width: 600px) {
+		.tag {
+			display: inline-block;
+			text-decoration: none;
+			margin: 0 0.25rem;
+
+			* {
+				color: inherit;
+				text-decoration: inherit;
+			}
+		}
+	}
+</style>

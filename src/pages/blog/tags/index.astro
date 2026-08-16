@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogPostTags from "../../../components/BlogPostTags.astro";
+import type { BlogPostFrontMatter } from "../../../types";
+type BlogPost = {
+	url: string;
+	frontmatter: BlogPostFrontMatter;
+};
+
+const blogPosts: BlogPost[] = Object.values(
+	import.meta.glob("../posts/*.md", { eager: true }),
+);
+const tags = blogPosts.flatMap(({ frontmatter: { tags } }) => tags ?? []);
+const unique = [...new Set(tags)];
+const sorted = unique.sort((a, b) =>
+	a.toLowerCase() < b.toLowerCase() ? -1 : 1,
+);
+---
+
+<BaseLayout title="Blog | Tags" heading="Tags">
+	<BlogPostTags tags={sorted} />
+</BaseLayout>

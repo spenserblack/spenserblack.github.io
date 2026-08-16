@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BlogPostTags from "../components/BlogPostTags.astro";
+import type { BlogPostFrontMatter } from "../types";
+type Props = {
+	frontmatter: BlogPostFrontMatter;
+};
+
+const {
+	frontmatter: { title: heading, tags },
+}: Props = Astro.props;
+const title = `Blog | ${heading}`;
+---
+
+<BaseLayout title={title} heading={heading}>
+	{tags && tags.length > 0 && <h2>Tags</h2>}
+	{tags && tags.length > 0 && <BlogPostTags tags={tags} />}
+	<slot />
+</BaseLayout>

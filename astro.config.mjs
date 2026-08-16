@@ -7,4 +7,12 @@ export default defineConfig({
   site: "https://spenser.black",
   output: "static",
   integrations: [svelte()],
+  markdown: {
+    shikiConfig: {
+      themes: {
+        dark: "gruvbox-dark-soft",
+        light: "rose-pine-dawn",
+      },
+    },
+  },
 });
