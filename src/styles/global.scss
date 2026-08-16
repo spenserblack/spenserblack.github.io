@@ -118,6 +118,16 @@ button,
   }
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  & td, & th {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--main-fg);
+  }
+}
+
 .tag {
   padding: 0.125rem 0.5rem;
   background-color: var(--tag-bg);
