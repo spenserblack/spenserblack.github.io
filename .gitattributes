@@ -1,1 +1,2 @@
+/src/pages/blog/posts/*.md linguist-detectable -linguist-documentation
 /public/vendored/* linguist-vendored binary
