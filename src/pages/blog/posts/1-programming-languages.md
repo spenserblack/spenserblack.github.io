@@ -5,6 +5,7 @@ tags:
   - programming-languages
 layout: ../../../layouts/MarkdownPost.astro
 ---
+
 These are some thoughts I've had about the programming languages I've used. There isn't a particular
 point to this writing, other than to finally get these ideas I've had in my head out and in a
 document. Expect some unstructured rambling, reader.
@@ -25,7 +26,7 @@ Instead, you should pick the language that best suits your needs given the proje
 
 I've played around with a few programming languages, learning the basics of those I get curious
 about. In my opinion, learning a programming language itself is not difficult, but learning the
-*concepts* of the language is the challenge. Thankfully, many programming languages share the
+_concepts_ of the language is the challenge. Thankfully, many programming languages share the
 same concepts, so once you get familiar with one programming language, you have a head start
 on learning some others.
 
@@ -96,7 +97,7 @@ fn check_loop(numbers: List(Int)) -> Nil {
 ## Go
 
 Go is pretty easy to learn. It has decent official online documentation to introduce you to the
-language, and the syntax is simple. It's a [garbage collected](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science))
+language, and the syntax is simple. It's a [garbage collected](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)
 language, but you still have explicit pass-by-pointer and pass-by-value, so it helps a learner get used
 to the concept of pointers, without having to stress about memory management.
 
@@ -104,7 +105,7 @@ What I like most about Go is probably its very simple cross-compilation. Just se
 to the operating system and `GOARCH` to the architecture you want to compile for. For this reason,
 I usually consider writing compiled CLIs in Go. What's also appealing to me is its standard library,
 which is full of utilities for things like image processing, HTTP, and more. Publishing a Go module
-is also simple, because you *don't* log in and publish to a package manager; instead, you just host the module on GitHub
+is also simple, because you _don't_ log in and publish to a package manager; instead, you just host the module on GitHub
 or on your site.
 
 Go is evolving and improving, so, while I might have been disappointed in the past about a lack of
@@ -118,7 +119,7 @@ features either have been added or could be added.
 I'm not a fan of the standard of using the "easiest" integer type instead of the most accurate integer type. For
 example, if you look at [the `Color` interface](https://pkg.go.dev/image/color#Color), you'll see
 that the type for the return values of `RGBA()` is `uint32`. At first glance, you might assume that
-they're actually 32-bit numbers, right? But really they're 16-bit numbers *stored* in 32-bit values;
+they're actually 32-bit numbers, right? But really they're 16-bit numbers _stored_ in 32-bit values;
 the values should never be greater than `0xFFFF`. Why do this? To avoid overflow if you multiply by
 a blend factor up to `0xFFFF`. But if you didn't look at the documentation, but just the return
 type, you might assume that the maximum value is a 32-bit number, `0xFFFFFFFF`. That's just an
@@ -187,20 +188,20 @@ func (Implementer) Example() bool {
 }
 ```
 
-What I take issue with is that, because interface implementations are *implicit,* the error points
-to a line where you try to *use* a type as an interface. In my opinion, it's better to have an
-*explicit* implementation, as the error can then point to where you *actually* failed to implement
+What I take issue with is that, because interface implementations are _implicit,_ the error points
+to a line where you try to _use_ a type as an interface. In my opinion, it's better to have an
+_explicit_ implementation, as the error can then point to where you _actually_ failed to implement
 the interface incorrectly. Take this TypeScript example:
 
 ```typescript
 interface Implemented {
-  example(): boolean
+  example(): boolean;
 }
 
 class Implementer implements Implemented {
   // An error is raised on the following line
   example(): void {
-    console.log("Hello, world!")
+    console.log("Hello, world!");
   }
 }
 
@@ -236,8 +237,8 @@ def increment_global():
 
 If you call `increment_global`, you will receive an error stating that `global_value` was referenced
 before it was assigned. This is because Python sees the `+=` as an assignment, and because of that
-thinks that there should be a *new* variable called `global_value`, scoped to the function, and
-any reference inside `increment_global` should use *that* instead of the variable with the same name in
+thinks that there should be a _new_ variable called `global_value`, scoped to the function, and
+any reference inside `increment_global` should use _that_ instead of the variable with the same name in
 the outer scope.
 
 This is an easy issue to solve:
@@ -252,7 +253,7 @@ def increment_global():
 ```
 
 So why am I complaining? I believe it's a symptom of the ambiguity between declaring a variable
-and assigning a value to a variable. Because you *don't* typically use a special keyword or syntax
+and assigning a value to a variable. Because you _don't_ typically use a special keyword or syntax
 for declaring vs assigning in Python, you can run into issues where you wanted to only assign, but
 you accidentally declared, too. Consider, for example, how Go's syntax is very clear:
 
@@ -286,8 +287,8 @@ statement would fail, with a message like `'cleaned_name' is not defined`. Does 
 Yes... But only if `len(names) == 0`. As long as there is at least one value in `names`, then
 `cleaned_name` will be defined, and can be used outside of the for loop.
 
-My issue with this is that, typically, it would be a mistake to use a variable defined *in* a loop
-*outside* of the loop. And, since Python uses indentation instead of braces, it's easier to make
+My issue with this is that, typically, it would be a mistake to use a variable defined _in_ a loop
+_outside_ of the loop. And, since Python uses indentation instead of braces, it's easier to make
 this type of mistake by simply accidentally un-indenting or failing to indent enough.
 
 Additionally, regarding scoping and for loops, you might find this behavior surprising if you've
@@ -399,10 +400,10 @@ Take this code for example:
 struct StringWrapper(&str);
 ```
 
-This is a struct that has one field, a reference to a string. This will *not* compile. This is
+This is a struct that has one field, a reference to a string. This will _not_ compile. This is
 because `StringWrapper` is borrowing a `str` via a reference, and there is no guarantee that the
 data that the reference is pointing to will exist in memory as long as `StringWrapper` does. You
-have a few solutions to this. One solution is to *own* the string using the `String` type, which
+have a few solutions to this. One solution is to _own_ the string using the `String` type, which
 will allocate the underlying data of the string and take ownership of it:
 
 ```rust
@@ -412,10 +413,10 @@ struct StringWrapper(String);
 Copying or cloning data is often the easiest way to handle ownership issues. Some other borrowed
 types and their owned alternatives include:
 
-| borrowed |    owned   |
+| borrowed |   owned    |
 | :------: | :--------: |
 |  `&[T]`  |  `Vec<T>`  |
-|  `&Path` |  `PathBuf` |
+| `&Path`  | `PathBuf`  |
 | `&OsStr` | `OsString` |
 
 And if you don't know if your type will be borrowed or owned, you can either just always make
@@ -435,8 +436,8 @@ as `StringWrapper`.
 
 ---
 
-Ironically, since Rust's ownership concept is considered an *alternative* to manual memory
-management, I think the easiest way to understand these concepts is to actually *use* a language
+Ironically, since Rust's ownership concept is considered an _alternative_ to manual memory
+management, I think the easiest way to understand these concepts is to actually _use_ a language
 with manual memory management, like C. When you have to think for yourself "I cannot free this
 memory until I have ensured that no more pointers to it are in use," I've found that you naturally
 start to understand what borrowing, owning, and lifetimes mean in Rust.
@@ -446,9 +447,9 @@ start to understand what borrowing, owning, and lifetimes mean in Rust.
 Rust should typically guarantee memory safety, unless you use an `unsafe` block. I think that this
 fact causes some coders to try to avoid `unsafe`, and consider it to be like a sin. When you write
 Rust code, you typically won't need to use the `unsafe` keyword, but I don't think it's correct to
-consider `unsafe` to be *bad.* If you look through the documentation (e.g.
+consider `unsafe` to be _bad._ If you look through the documentation (e.g.
 [`OsStr::from_encoded_bytes_unchecked`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html#method.from_encoded_bytes_unchecked)),
-you will see *valid* uses of `unsafe`. All it means is that the language itself cannot guarantee
+you will see _valid_ uses of `unsafe`. All it means is that the language itself cannot guarantee
 memory safety, so it is up to the author to guarantee memory safety through the code's logic
 instead. For example, if you have already asserted that `bytes` will only contain valid UTF-8 bytes,
 the following should actually be safe:
@@ -543,17 +544,17 @@ This example only scratches the surface of traits. It doesn't cover:
 
 This example does illustrate what I like about traits:
 
-- Because of the syntax `impl TraitName for Type {}`, it is *not* a conflict if two traits have
+- Because of the syntax `impl TraitName for Type {}`, it is _not_ a conflict if two traits have
   associated functions or methods with the same name.
 - You can automatically add default behavior to a trait (`PrettyTypeName::pretty_type_name`).
 - Traits can be used as constraints in generics, allowing you to write a function once for all
   types that implement those traits.
-- We can implement traits not only on a type we define, but also on an *existing* type.
+- We can implement traits not only on a type we define, but also on an _existing_ type.
 
 ### Macros
 
 I like and dislike Rust's macros for the same reason: you can do pretty much anything with them. If
-you write a procedural macro, you can even do things like parse JSON at *compile-time.* That might
+you write a procedural macro, you can even do things like parse JSON at _compile-time._ That might
 be handy for making a concise shortcut to generate code, but it can also make your API opaque and
 hard to understand. I can look at a function signature and get a decent idea of what the output is,
 but I can't really know what a macro outputs without reading its documentation and/or source code.
@@ -564,7 +565,7 @@ I'm going to talk a lot about JavaScript in this section, because I don't really
 talking about JavaScript and TypeScript separately.
 
 To put it simply: if I want something to run in the browser, I probably want to use JavaScript or
-TypeScript. I *can* compile Go or Rust to [WASM](https://en.wikipedia.org/wiki/WebAssembly) to run
+TypeScript. I _can_ compile Go or Rust to [WASM](https://en.wikipedia.org/wiki/WebAssembly) to run
 in the browser, but if the browser is a main goal then I'm picking TypeScript. The reason I
 gravitate to TypeScript over JavaScript is simply that I enjoy relying on types to improve code
 suggestions and to also easily document intent. For example, take this JavaScript:
@@ -603,18 +604,18 @@ Now we know that if we pass two numbers to `add`, we get a number, if we pass tw
 is undefined behavior, and will cause the compiler to raise an error.
 
 You might notice something unfortunate in this example: I used `as any`. `+` is valid between
-`number` and `number`, and `+` is valid between `string` and `string`, but `+` is *not* valid
+`number` and `number`, and `+` is valid between `string` and `string`, but `+` is _not_ valid
 between `number | string` and `number | string`. So, if I dropped that `as any`, the TypeScript
 compiler would worry that I might potentially add a number and a string together.
 
 Some developers consider `as any` to be a sin, because it essentially disables type checking. I
 think this is a good time to point this out: I think it's actually okay to disable type checking
-sometimes, as long as the *usage* is still checked. In other words, I'm not too worried about
-type violations in a small utility, but I *would* be worried if *calls* to that utility violated
+sometimes, as long as the _usage_ is still checked. In other words, I'm not too worried about
+type violations in a small utility, but I _would_ be worried if _calls_ to that utility violated
 the type. I think that, in this type of example, it's better to assert proper behavior of the
-utility function with *tests,* rather than depend on the type checker. This is generally my
-attitude towards TypeScript. I'm not very interested in using the type system to *prevent* me from
-violating types, but I *am* interested in adding types to JavaScript to communicate intent.
+utility function with _tests,_ rather than depend on the type checker. This is generally my
+attitude towards TypeScript. I'm not very interested in using the type system to _prevent_ me from
+violating types, but I _am_ interested in adding types to JavaScript to communicate intent.
 Tooling (like LSPs) will know that I intend for `add` to return either a string or a number depending on the
 arguments' type, and can add appropriate type inferences that can improve completions. Human readers
 can look at the type of `add` and understand its intent without needing to read a documentation comment.

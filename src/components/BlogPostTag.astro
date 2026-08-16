@@ -1,10 +1,11 @@
 ---
 type Props = {
-	tag: string,
+	tag: string;
 };
 
 const { tag }: Props = Astro.props;
 ---
+
 <li class="tag"><a href={`/blog/tags/${tag}`}>{tag}</a></li>
 
 <style lang="scss">

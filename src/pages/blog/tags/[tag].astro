@@ -3,17 +3,21 @@ import type { GetStaticPaths } from "astro";
 import type { BlogPostFrontMatter } from "../../../types";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 type BlogPost = {
-	url: string,
-	frontmatter: BlogPostFrontMatter,
+	url: string;
+	frontmatter: BlogPostFrontMatter;
 };
 
 export const getStaticPaths = (() => {
-	const blogPosts: BlogPost[] = Object.values(import.meta.glob("../posts/*.md", { eager: true }));
-	const tags = blogPosts.flatMap(({ frontmatter: { tags } }) => (tags ?? []));
-	const uniqueTags = [...(new Set(tags))];
+	const blogPosts: BlogPost[] = Object.values(
+		import.meta.glob("../posts/*.md", { eager: true }),
+	);
+	const tags = blogPosts.flatMap(({ frontmatter: { tags } }) => tags ?? []);
+	const uniqueTags = [...new Set(tags)];
 
 	return uniqueTags.map((tag) => {
-		const filtered = blogPosts.filter((post) => post.frontmatter.tags?.includes(tag) ?? false);
+		const filtered = blogPosts.filter(
+			(post) => post.frontmatter.tags?.includes(tag) ?? false,
+		);
 
 		return {
 			params: { tag },
@@ -25,12 +29,19 @@ export const getStaticPaths = (() => {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
+
 <BaseLayout title="Blog | Tags" heading="Tags">
 	<p>
 		<a href="/blog/tags/">All tags</a>
 	</p>
 	<h2>{tag}</h2>
 	<ul>
-		{posts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+		{
+			posts.map((post) => (
+				<li>
+					<a href={post.url}>{post.frontmatter.title}</a>
+				</li>
+			))
+		}
 	</ul>
 </BaseLayout>
