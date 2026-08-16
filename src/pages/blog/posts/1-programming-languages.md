@@ -198,7 +198,8 @@ interface Implemented {
 }
 
 class Implementer implements Implemented {
-  example(): void { // An error is raised here
+  // An error is raised on the following line
+  example(): void {
     console.log("Hello, world!")
   }
 }
