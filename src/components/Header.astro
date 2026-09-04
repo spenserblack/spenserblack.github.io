@@ -31,21 +31,20 @@ const pages: [
 		</nav>
 	</div>
 	<div class="controls">
-		<div id="theme-dropdown" class="dropdown">
-			<button
-				type="button"
-				id="theme-dropdown-button"
-				class="primary theme"
-				aria-expanded="false"
-				aria-controls="theme-dropdown"
-			>
-				Theme
-			</button>
-			<ul id="theme-dropdown-content" class="dropdown-content hide">
-				<li><button type="button" id="theme-system">System</button></li>
-				<li><button type="button" id="theme-dark">Dark</button></li>
-				<li><button type="button" id="theme-light">Light</button></li>
-			</ul>
+		<button
+			type="button"
+			class="primary theme"
+			popovertarget="settings-popover"
+			popovertargetaction="toggle"
+		>
+			Settings
+		</button>
+		<div id="settings-popover" popover="auto">
+			<h2>Settings</h2>
+			<h3>Theme</h3>
+			<button type="button" id="theme-system">System</button>
+			<button type="button" id="theme-dark">Dark</button>
+			<button type="button" id="theme-light">Light</button>
 		</div>
 	</div>
 </header>
@@ -76,21 +75,6 @@ const pages: [
 		flex-direction: row;
 		justify-content: space-around;
 	}
-	.dropdown {
-		ul {
-			position: fixed;
-			padding: 0;
-			background-color: var(--contrast);
-			margin-top: 0.1rem;
-			li {
-				display: block;
-				* {
-					color: var(--main-fg);
-					background-color: var(--contrast);
-				}
-			}
-		}
-	}
 
 	#nav-menu-button {
 		display: none;
@@ -119,6 +103,12 @@ const pages: [
 	@media screen and (min-width: 1000px) {
 		nav {
 			display: unset;
+		}
+	}
+
+	#settings-popover {
+		button {
+			margin: 0.5rem;
 		}
 	}
 </style>
