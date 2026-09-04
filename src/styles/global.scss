@@ -184,3 +184,18 @@ label {
   }
 }
 // }}}
+
+// Popovers: {{{
+:popover-open {
+  min-width: 50%;
+  padding: 1rem 1rem;
+  border: none;
+  color: var(--main-fg);
+  background-color: var(--main-bg);
+
+  &::backdrop {
+    background-color: black;
+    opacity: 0.5;
+  }
+}
+// }}}
