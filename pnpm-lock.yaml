@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/svelte':
         specifier: ^9.0.1
-        version: 9.0.1(astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.104.0)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)
+        version: 9.0.1(astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.1)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.104.1)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)
       '@steamdown/core':
         specifier: ^1.0.0
         version: 1.0.0
@@ -19,13 +19,13 @@ importers:
         version: 1.0.0(@steamdown/core@1.0.0)
       astro:
         specifier: ^7.3.2
-        version: 7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.0)(yaml@2.9.0)
+        version: 7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.1)(yaml@2.9.0)
       rand-seed:
         specifier: ^3.0.0
         version: 3.0.0
       sass:
-        specifier: ^1.104.0
-        version: 1.104.0
+        specifier: ^1.104.1
+        version: 1.104.1
       svelte:
         specifier: ^5.57.0
         version: 5.57.0
@@ -1735,8 +1735,8 @@ packages:
   sass-formatter@0.7.9:
     resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
 
-  sass@1.104.0:
-    resolution: {integrity: sha512-btHMApW2bgolvClhRW8AlQJzgI9lUB3pPSofBQQT+E46GWvf9o0TVQ13SYv5riWZVFyPN+JNz3TKW9XhBlc10w==}
+  sass@1.104.1:
+    resolution: {integrity: sha512-yDA+1aIG3EHgN4V/BvuhCvu61FF6hEd4e+9DxikUm9U0CAGuvdIZ/UYy7qbOxjhbbWQraoyLlMuzdRGOSV5Bmw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -2104,15 +2104,15 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/svelte@9.0.1(astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.104.0)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)':
+  '@astrojs/svelte@9.0.1(astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.1)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.104.1)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0))
-      astro: 7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.0)(yaml@2.9.0)
+      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0))
+      astro: 7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.1)(yaml@2.9.0)
       svelte: 5.57.0
       svelte2tsx: 0.7.58(svelte@5.57.0)(typescript@6.0.3)
       typescript: 6.0.3
-      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0))
+      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0))
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -2832,14 +2832,14 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
-  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.4
       svelte: 5.57.0
-      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0))
+      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0))
 
   '@tybys/wasm-util@0.10.3':
     dependencies:
@@ -2889,7 +2889,7 @@ snapshots:
 
   array-timsort@1.0.3: {}
 
-  astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.0)(yaml@2.9.0):
+  astro@7.3.2(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(sass@1.104.1)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler-rs': 0.4.0(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)
       '@astrojs/internal-helpers': 0.11.0
@@ -2939,8 +2939,8 @@ snapshots:
       ultrahtml: 1.7.0
       unifont: 0.7.5
       unstorage: 1.17.5
-      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0))
+      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.5.4
@@ -3593,7 +3593,7 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  sass@1.104.0:
+  sass@1.104.1:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
@@ -3812,7 +3812,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0):
+  vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -3822,12 +3822,12 @@ snapshots:
     optionalDependencies:
       esbuild: 0.28.2
       fsevents: 2.3.3
-      sass: 1.104.0
+      sass: 1.104.1
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.0)(yaml@2.9.0)
+      vite: 8.2.2(esbuild@0.28.2)(sass@1.104.1)(yaml@2.9.0)
 
   vscode-languageserver-textdocument@1.0.14: {}
 
