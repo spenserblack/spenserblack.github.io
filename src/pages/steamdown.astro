@@ -9,15 +9,18 @@ const markupLink =
 
 <BaseLayout title={title}>
 	<h2>
-		Markdown to <ExternalLink link={markupLink}>Steam Markup</ExternalLink> converter
+		Markdown to <ExternalLink link={markupLink}>Steam Markup</ExternalLink>{" "}
+		converter
 	</h2>
 	<p>
-		This is a tool I wrote to convert Markdown (well, a Markdown-<em>like</em> syntax)
-		to <ExternalLink link={markupLink}>Steam's markup language</ExternalLink>.
-		You can find the source code at <ExternalLink
-			link="https://github.com/spenserblack/steamdown"
-			>github.com/spenserblack/steamdown</ExternalLink
-		>, or check out <a href="/projects">my projects</a> for more information.
+		This is a tool I wrote to convert Markdown (well, a Markdown-<em>like</em>{" "}
+		syntax) to{" "}
+		<ExternalLink link={markupLink}>Steam's markup language</ExternalLink>. You
+		can find the source code at{" "}
+		<ExternalLink link="https://github.com/spenserblack/steamdown">
+			github.com/spenserblack/steamdown
+		</ExternalLink>
+		, or check out <a href="/projects">my projects</a> for more information.
 	</p>
 	<Steamdown client:load />
 </BaseLayout>

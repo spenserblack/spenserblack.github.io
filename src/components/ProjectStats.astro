@@ -15,7 +15,9 @@ const { language, relation }: Props = Astro.props;
 
 <dl>
 	<dt>Relation</dt>
-	<dd class="relation" title={relationTitle[relation]}>{relation}</dd>
+	<dd class="relation" title={relationTitle[relation]}>
+		{relation}
+	</dd>
 	<dt>Language</dt>
 	<dd>{language}</dd>
 </dl>

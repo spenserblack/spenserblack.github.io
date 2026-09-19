@@ -6,7 +6,9 @@ type Props = {
 const { tag }: Props = Astro.props;
 ---
 
-<li class="tag"><a href={`/blog/tags/${tag}`}>{tag}</a></li>
+<li class="tag">
+	<a href={`/blog/tags/${tag}`}>{tag}</a>
+</li>
 
 <style lang="scss">
 	@media (min-width: 600px) {
