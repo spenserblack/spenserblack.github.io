@@ -8,5 +8,7 @@ const { tags }: Props = Astro.props;
 ---
 
 <ul class="tags">
-	{tags.map((tag) => <BlogPostTag tag={tag} />)}
+	{tags.map((tag) => (
+		<BlogPostTag tag={tag} />
+	))}
 </ul>

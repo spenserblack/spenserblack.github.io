@@ -6,4 +6,8 @@ type Props = {
 const { link }: Props = Astro.props;
 ---
 
-<h2><a href={link}><slot /></a></h2>
+<h2>
+	<a href={link}>
+		<slot />
+	</a>
+</h2>

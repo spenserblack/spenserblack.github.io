@@ -8,23 +8,20 @@ type Props = {
 const { brand, light, dark }: Props = Astro.props;
 ---
 
-{
-	dark && (
-		<img
-			class="logo dark-only"
-			src={`/vendored/${dark}`}
-			alt={`${brand} Logo (dark theme)`}
-		/>
-	)
-}{
-	light && (
-		<img
-			class="logo light-only"
-			src={`/vendored/${light}`}
-			alt={`${brand} Logo (light theme)`}
-		/>
-	)
-}
+{dark && (
+	<img
+		class="logo dark-only"
+		src={`/vendored/${dark}`}
+		alt={`${brand} Logo (dark theme)`}
+	/>
+)}
+{light && (
+	<img
+		class="logo light-only"
+		src={`/vendored/${light}`}
+		alt={`${brand} Logo (light theme)`}
+	/>
+)}
 <style>
 	img {
 		max-width: 1em;
