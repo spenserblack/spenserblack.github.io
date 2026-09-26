@@ -28,7 +28,7 @@
     "uuid": "^14.0.2"
   },
   "devDependencies": {
-    "cspell": "^10.3.2",
+    "cspell": "^10.3.3",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.0.1",
     "prettier-plugin-svelte": "^4.1.1"
