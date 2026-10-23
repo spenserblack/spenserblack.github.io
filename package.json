@@ -17,7 +17,7 @@
     "spelling-check": "cspell ."
   },
   "dependencies": {
-    "@astrojs/svelte": "^9.0.1",
+    "@astrojs/svelte": "^9.1.0",
     "@steamdown/core": "^1.0.0",
     "@steamdown/html": "^1.0.0",
     "astro": "^7.4.1",
