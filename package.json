@@ -22,7 +22,7 @@
     "@steamdown/html": "^1.0.0",
     "astro": "^7.4.1",
     "rand-seed": "^3.0.0",
-    "sass": "^1.105.2",
+    "sass": "^1.106.1",
     "svelte": "^5.57.2",
     "typescript": "^6.0.3",
     "uuid": "^14.0.3"
