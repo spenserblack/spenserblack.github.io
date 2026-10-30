@@ -30,7 +30,7 @@
   "devDependencies": {
     "cspell": "^10.4.0",
     "prettier": "^3.9.10",
-    "prettier-plugin-astro": "^1.1.1",
+    "prettier-plugin-astro": "^1.1.2",
     "prettier-plugin-svelte": "^4.1.1"
   }
 }
