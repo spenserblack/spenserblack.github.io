@@ -20,7 +20,7 @@
     "@astrojs/svelte": "^9.1.1",
     "@steamdown/core": "^1.0.0",
     "@steamdown/html": "^1.0.0",
-    "astro": "^7.4.1",
+    "astro": "^7.4.3",
     "rand-seed": "^3.0.0",
     "sass": "^1.106.1",
     "svelte": "^5.57.3",
