@@ -17,10 +17,10 @@
     "spelling-check": "cspell ."
   },
   "dependencies": {
-    "@astrojs/svelte": "^9.1.2",
+    "@astrojs/svelte": "^9.1.4",
     "@steamdown/core": "^1.0.0",
     "@steamdown/html": "^1.0.0",
-    "astro": "^7.4.5",
+    "astro": "^7.4.10",
     "rand-seed": "^3.0.0",
     "sass": "^1.108.1",
     "svelte": "^5.57.3",
