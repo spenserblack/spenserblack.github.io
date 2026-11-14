@@ -4,6 +4,17 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    groups:
+      astro-and-friends:
+        patterns:
+          - astro
+          - "@astrojs/*"
+          - svelte
+          - prettier-plugin-astro
+          - prettier-plugin-svelte
+      steamdown:
+        patterns:
+          - "@steamdown/*"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
