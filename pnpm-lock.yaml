@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/svelte':
         specifier: ^9.1.2
-        version: 9.1.2(astro@7.4.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))(esbuild@0.28.2)(sass@1.107.1)(svelte@5.57.3)(typescript@6.0.3)(yaml@2.9.1)
+        version: 9.1.2(astro@7.4.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))(esbuild@0.28.2)(sass@1.108.1)(svelte@5.57.3)(typescript@6.0.3)(yaml@2.9.1)
       '@steamdown/core':
         specifier: ^1.0.0
         version: 1.0.0
@@ -19,13 +19,13 @@ importers:
         version: 1.0.0(@steamdown/core@1.0.0)
       astro:
         specifier: ^7.4.5
-        version: 7.4.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
+        version: 7.4.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
       rand-seed:
         specifier: ^3.0.0
         version: 3.0.0
       sass:
-        specifier: ^1.107.1
-        version: 1.107.1
+        specifier: ^1.108.1
+        version: 1.108.1
       svelte:
         specifier: ^5.57.3
         version: 5.57.3
@@ -1432,8 +1432,8 @@ packages:
   http-cache-semantics@4.3.0:
     resolution: {integrity: sha512-M5t5LlJpS1UHMjvwRQVdFHvPISGeLAxNcrWuJkeGh0KxsqCHZ1O3NXZU/8x7cD0BDcGW8kapxMKTvwlqrNkHkA==}
 
-  immutable@5.1.9:
-    resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
+  immutable@5.1.10:
+    resolution: {integrity: sha512-Uu72qZXUtm+n98uML3Xr6pVFHl4xnmeCuAsrm0VqFlQim/Ib6NrPSJLpx6CrZ/G6DnoGaCUgtx8gY+o+ovxnCw==}
 
   import-fresh@4.0.1:
     resolution: {integrity: sha512-/XFeXYgkuWgbtqPC7qPKvciXTvhtz7WMNQKQsAM1Kz+j0I5OWJDrybfiya6QtHF9oEvPkLwTHmC9+4OR/MmfIA==}
@@ -1742,8 +1742,8 @@ packages:
     resolution: {integrity: sha512-Nf4eMGE2O5vnJG7KPCRyksWS9gVKSYoUWtPeMXRRxwZSPVQhSGtL602xVYS65LvMkHmkvKa7xpauF0+/5pPwrg==}
     hasBin: true
 
-  sass@1.107.1:
-    resolution: {integrity: sha512-aJ1/LvxOOb04YhmiBjzZn3jVwdHKol+OVhoMV6fFl02fF9T3i+5Mg9l/CnzqtM+NX5Jn5o3lAbs/ZJivTCLHfQ==}
+  sass@1.108.1:
+    resolution: {integrity: sha512-sIYgSvOPeD9wABwDS/ofNjHASSck+7h3jLkk7wG1NPFL3XeS6vOQjBlAFSmRV09kZr1yt/Tuayt6kKtBbLjHNQ==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -2116,15 +2116,15 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/svelte@9.1.2(astro@7.4.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))(esbuild@0.28.2)(sass@1.107.1)(svelte@5.57.3)(typescript@6.0.3)(yaml@2.9.1)':
+  '@astrojs/svelte@9.1.2(astro@7.4.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))(esbuild@0.28.2)(sass@1.108.1)(svelte@5.57.3)(typescript@6.0.3)(yaml@2.9.1)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3)(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))
-      astro: 7.4.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
+      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3)(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))
+      astro: 7.4.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
       svelte: 5.57.3
       svelte2tsx: 0.7.63(svelte@5.57.3)(typescript@6.0.3)
       typescript: 6.0.3
-      vite: 8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -2843,14 +2843,14 @@ snapshots:
     dependencies:
       acorn: 8.19.0
 
-  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))':
+  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 1.4.5
       obug: 2.2.1
       svelte: 5.57.3
-      vite: 8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
@@ -2900,7 +2900,7 @@ snapshots:
 
   array-timsort@1.0.3: {}
 
-  astro@7.4.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1):
+  astro@7.4.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.2
       '@astrojs/internal-helpers': 0.13.0
@@ -2949,8 +2949,8 @@ snapshots:
       unifont: 1.0.3
       unstorage: 1.17.6
       verkit: 0.5.0
-      vite: 8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1))
+      vite: 8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.6.7
@@ -3329,7 +3329,7 @@ snapshots:
 
   http-cache-semantics@4.3.0: {}
 
-  immutable@5.1.9: {}
+  immutable@5.1.10: {}
 
   import-fresh@4.0.1: {}
 
@@ -3600,10 +3600,10 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  sass@1.107.1:
+  sass@1.108.1:
     dependencies:
       chokidar: 5.0.0
-      immutable: 5.1.9
+      immutable: 5.1.10
       source-map-js: 1.2.2
     optionalDependencies:
       '@parcel/watcher': 2.6.0
@@ -3826,7 +3826,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1):
+  vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -3836,12 +3836,12 @@ snapshots:
     optionalDependencies:
       esbuild: 0.28.2
       fsevents: 2.3.3
-      sass: 1.107.1
+      sass: 1.108.1
       yaml: 2.9.1
 
-  vitefu@1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)):
+  vitefu@1.1.3(vite@8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)):
     optionalDependencies:
-      vite: 8.3.5(esbuild@0.28.2)(sass@1.107.1)(yaml@2.9.1)
+      vite: 8.3.5(esbuild@0.28.2)(sass@1.108.1)(yaml@2.9.1)
 
   vscode-languageserver-textdocument@1.0.16: {}
 
