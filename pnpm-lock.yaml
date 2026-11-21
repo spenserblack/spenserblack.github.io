@@ -21,8 +21,8 @@ importers:
         specifier: ^7.4.10
         version: 7.4.10(esbuild@0.28.2)(sass@1.108.2)(yaml@2.9.1)
       rand-seed:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.1.0
+        version: 3.1.0
       sass:
         specifier: ^1.108.2
         version: 1.108.2
@@ -1795,8 +1795,8 @@ packages:
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
 
-  rand-seed@3.0.0:
-    resolution: {integrity: sha512-Zy8wnL6whyIAGOX2i9Mn1Orq3t9TNizGUk8euxamr60Z3PmspwFeT+vCZPcYMAR5nOztnAKPtVi3jt8EzmCB6g==}
+  rand-seed@3.1.0:
+    resolution: {integrity: sha512-L+kVjSQXAIJxstXCmQxq8JV9tNw9CNV3TeOanXq+EIyV7LUIxEUNOu+YQRxjcEt11M0nV3bZCJ8KIeeGUlDV1Q==}
 
   readdirp@5.1.1:
     resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
@@ -3717,7 +3717,7 @@ snapshots:
 
   radix3@1.1.2: {}
 
-  rand-seed@3.0.0: {}
+  rand-seed@3.1.0: {}
 
   readdirp@5.1.1: {}
 
