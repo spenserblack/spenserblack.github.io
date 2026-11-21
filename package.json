@@ -21,7 +21,7 @@
     "@steamdown/core": "^1.0.0",
     "@steamdown/html": "^1.0.0",
     "astro": "^7.4.10",
-    "rand-seed": "^3.0.0",
+    "rand-seed": "^3.1.0",
     "sass": "^1.108.2",
     "svelte": "^5.57.3",
     "typescript": "^6.0.3",
